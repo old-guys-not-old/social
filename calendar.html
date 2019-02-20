@@ -1,20 +1,21 @@
 <header>
-   <title>Music Player</title>
+   <title>Up4Social</title>
    <link rel="stylesheet" type="text/css" href="calendar.css"/>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
+    <!--Import materialize.css-->
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </header>
 <body>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
    <div id="screen">
    <div class="head-bar">
+     <img id="logo" src="images/Logo.png">
          <button class="create-event-button" onclick="toggleForm()">
-            Create Event
+            <span color="black" class="	glyphicon glyphicon-edit"></span>
          </button>
    </div>
 
@@ -23,16 +24,25 @@
      <form class="form-container">
        <div class="form-title">Create Event</div>
 
-        <input type="text" placeholder="Edit Event Title" name="title" required>
-
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-       <button type="submit" class="btn" onclick="closeForm()">Create</button>
+        <input type="text" placeholder="Event Title" name="title" required>
+        <input type="text" placeholder="Event Details" name="notes" required>
+        <p id="time-selection"> Select a Time</p>
+        <input class="time-selection" type="time" id="appt" name="start" min="1:00" max="12:00" required>
+        <input class="time-selection" type="time" id="appt" name="end" min="1:00" max="12:00" required>
+        <input id="guests-input" type="text" placeholder="Invite users" name="invite" required>
+       <button id="create-event-button-popup" type="submit" class="btn" onclick="toggleForm()">Create</button>
+       <p id="cancel-button" onclick="toggleForm()">Cancel</p>
       </form>
    </div>
 
   <div id="hour-column">
-    <pre class="tab">M   Tu   W   Th   F   Sa   Su</pre>
+    <p class="day">M</p>
+    <p class="day">Tu</p>
+    <p class="day">W</p>
+    <p class="day">Th</p>
+    <p class="day">F</p>
+    <p class="day">Sa</p>
+    <p class="day">Su</p>
   </div>
   <div class="hour-row">
     <div class="times"> <p>12am </p>

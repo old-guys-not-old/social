@@ -12,6 +12,7 @@ body {
 	height: 530px;
 	width: 300px;
 	margin: 105px 23px;
+	margin-left:31px;
 	text-align: center;
 }
 
@@ -24,19 +25,27 @@ body {
 
 }
 
+#logo{
+	max-height: 40px;
+	padding-top:5px;
+	margin-left:30px;
+}
+
 /* how do i vertically center this stupid thing*/
 .create-event-button {
 	float: right;
-	margin-top: 14px;
-	margin-right: 14px;
+	padding:5px;
+	margin-top: 9px;
+	margin-right: 9px;
+	border-radius: 4px;
 }
 
 #hour-column {
-	margin-top: 5px;
+	margin-top: 3px;
 	font-weight: bold;
 	font-size: 14px;
-	text-align: left;
-	margin-left: 35px;
+	text-align: center;
+	margin-bottom:5px;
 }
 .dates-bar{
 	width: 250px;
@@ -51,81 +60,17 @@ body {
 	border-left:0px;
 	border-style: solid;
 	border-colo: #404040;
-	padding-bottom: 1px;
+	margin-bottom: 8px;
 }
 .times{
-	font-size: 8px;
+	font-size: 9px;
 	text-align: left;
 	margin-left: 5px;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
-.volume-bar {
-	width: 24px;
-	height: 6px;
-	border: 1px solid;
-	display: inline-block;
-	margin: 5px;
-}
 
-.volume-level {
 
-}
-
-.volume-rocker {
-	/*margin-top: 10px;*/
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-
-}
-
-#slider{
-	width: 250px;
-	margin-top: -5px;
-}
-
-.control-button {
-	cursor: pointer;
-	height:30px;
-	width:40px;
-	background-color: #F0F0F0;
-	border: 1px solid grey;
-}
-
-.volume-button {
-	display: inline-block;
-	cursor: pointer;
-	width: 40px;
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-top: 8px;
-	font-size: 10px;
-	font-weight: bold;
-	height: 3%;
-	border-radius: 2px;
-	background-color: white;
-}
-
-.volume-icon-wrapper {
-	width: 250px;
-	height: 20px;
-}
-
-#player-time {
-	width: 250px;
-	display: inline-block;
-}
-
-#time-elapsed {
-	float: left;
-	display: inline-block;
-}
-
-#time-total{
-	float: right;
-	display: inline-block;
-}
 
 /* BEGIN FORM CSS */
 
@@ -158,6 +103,7 @@ body {
   left: 100px;
   border: 1px solid #000;
   z-index: 9;
+	font-size:10px;
 }
 
 /* Add styles to the form container */
@@ -166,6 +112,7 @@ body {
   height: 300px;
   padding: 10px;
   background-color: white;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
 /* Full-width input fields */
@@ -176,6 +123,23 @@ body {
   padding: 5px;
   height: 15px;
   margin: 5px 0 22px 0;
+}
+
+#time-selection{
+	margin-bottom:0;
+	float:left;
+}
+
+#create-event-button-popup{
+	margin-top:10px;
+	padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.time-selection{
+float:left;	
 }
 
 /* When the inputs get focus, do something */
@@ -201,7 +165,34 @@ body {
   background-color: red;
 }
 
+
+.day{
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	color:#585858;
+	margin:0px;
+	display:inline;
+	margin-left:7px;
+	margin-right:7px;
+}
+
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: .8;
+}
+
+.glyphicon{
+	color:#585858;
+}
+
+#guests-input{
+	margin-top:10px;
+}
+
+#cancel-button{
+font-size: 10px;
+color:grey;
+cursor:pointer;
+}
+#cancel-button:hover{
+	color:#585858;
 }

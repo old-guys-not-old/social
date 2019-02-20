@@ -7,6 +7,16 @@
 //     var instances = M.Datepicker.init(elems, options);
 // }
 
+
+function toggleForm(){
+if (document.getElementById("myForm").style.display=="block"){
+  document.getElementById("myForm").style.display = "none";
+}
+  else {
+    document.getElementById("myForm").style.display = "block";
+  }
+}
+
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }

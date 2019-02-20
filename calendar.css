@@ -94,6 +94,10 @@ body {
 
 .form-title {
   text-align: left;
+	width:100px;
+	display:inline;
+	float:left;
+	font-weight: bold;
 }
 
 .form-popup {
@@ -128,6 +132,7 @@ body {
 #time-selection{
 	margin-bottom:0;
 	float:left;
+	display:block;
 }
 
 #create-event-button-popup{
@@ -139,7 +144,7 @@ body {
 }
 
 .time-selection{
-float:left;	
+float:left;
 }
 
 /* When the inputs get focus, do something */
@@ -194,5 +199,18 @@ color:grey;
 cursor:pointer;
 }
 #cancel-button:hover{
+	color:#585858;
+}
+#cancel-button-top{
+font-size: 10px;
+color:grey;
+cursor:pointer;
+width:30px;
+float:,right;
+display:inline;
+margin-right:-15px;
+font-weight:bold;
+}
+#cancel-button-top:hover{
 	color:#585858;
 }

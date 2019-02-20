@@ -8,47 +8,103 @@
 <body>
    <div id="screen">
    <div class="head-bar">
-       <div class="back-button"> 
-         <!-- I was having problems with wrapping the component in the <a> tag, so i used the back button from songs.html. its a good solution because back buttons are now uniform. I also use other material icons in this project, so its not as if I don't know how to use them.-->
-         <a href="./songs.html">
-            <img src="./images/back_arrow.png" class="button-arrow"/>
-         </a>
+         <button class="create-event-button" onclick="openForm()">
+            Add Event
+         </button>
+   </div>
+
+   <!-- POPUP FORM -->
+   <div class="form-popup" id="myForm">
+     <form action="/action_page.php" class="form-container">
+       <h1>Login</h1>
+
+       <label for="email"><b>Email</b></label>
+       <input type="text" placeholder="Enter Email" name="email" required>
+
+       <label for="psw"><b>Password</b></label>
+       <input type="password" placeholder="Enter Password" name="psw" required>
+
+       <button type="submit" class="btn">Login</button>
+       <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+     </form>
+   </div>
+
+  <div id="player-song-name">
+    <pre class="tab">M   Tu   W   Th   F   Sa   Su</pre>
+  </div>
+  <div class="hour-row">
+    <div class="times"> <p>12am </p>
+    </div>
+    </div>
+  <div class="hour-row">
+    <div class="times"> <p>1am </p>
+    </div>
+    </div>
+  <div class="hour-row">
+    <div class="times"> <p>2am </p>
+    </div>
+    </div>
+  <div class="hour-row">
+    <div class="times"> <p>3am </p>
+    </div>
+    </div>
+  <div class="hour-row">
+    <div class="times"> <p>4am </p>
+    </div>
+    </div>
+    <div class="hour-row">
+      <div class="times"> <p>5am </p>
       </div>
-   </div>
-   <img class="player-album-art"src="images/currents.jpg" alt="Currents Album Cover"/>
-   <div>
-      <p id="player-song-name">The Less I Know The Better</p>
-      <p class="player-song-info"><em>Currents</em> - Tame Impala</p>
-   </div>
-   <input type="range" id="slider" min="0" max="180" value="0">
-   <div id="player-time">
-      <div id="time-elapsed">0:00</div>
-      <div id="time-total">3:00</div>
-   </div>
-   <div>
-      <button class="control-button" onclick="prevSong()"><i class="material-icons">skip_previous</i></button>
-      <button class="control-button" id="play" onclick="switchPlay()"><i class="material-icons">play_arrow</i></button>
-      <button class="control-button" onclick="nextSong()"><i class="material-icons">skip_next</i></button>
-   </div>
-   <div class="volume-rocker">
-      <i class="material-icons">volume_down</i>
-      <div class="volume-bar" id="vl0"></div>
-      <div class="volume-bar" id="vl1"></div>
-      <div class="volume-bar" id="vl2"></div>
-      <div class="volume-bar" id="vl3"></div>
-      <div class="volume-bar" id="vl4"></div>
-      <div class="volume-bar" id="vl5"></div>
-   </div>
-   <button class="volume-button" onclick="volDown()">
-      <div>&mdash;</div>
-   <button class="volume-button" onclick="volUp()">
-      <div>+</div>
-   </button>
-   
+      </div>
+    <div class="hour-row">
+      <div class="times"> <p>6am </p>
+      </div>
+      </div>
+    <div class="hour-row">
+      <div class="times"> <p>7am </p>
+      </div>
+      </div>
+    <div class="hour-row">
+      <div class="times"> <p>8am </p>
+      </div>
+      </div>
+    <div class="hour-row">
+      <div class="times"> <p>9am </p>
+      </div>
+      </div>
+      <div class="hour-row">
+        <div class="times"> <p>10am </p>
+        </div>
+        </div>
+      <div class="hour-row">
+        <div class="times"> <p>11am </p>
+        </div>
+        </div>
+      <div class="hour-row">
+        <div class="times"> <p>12pm </p>
+        </div>
+        </div>
+      <div class="hour-row">
+        <div class="times"> <p>1pm </p>
+        </div>
+        </div>
+      <div class="hour-row">
+        <div class="times"> <p>2pm </p>
+        </div>
+        </div>
+        <div class="hour-row">
+          <div class="times"> <p>3pm </p>
+          </div>
+          </div>
+        <div class="hour-row">
+          <div class="times"> <p>4pm </p>
+          </div>
+          </div>
+          <div class="hour-row">
+            <div class="times"> <p>5pm </p>
+            </div>
+            </div>
 </div>
 <script src="calendar.js"></script>
 </body>
 </html>
-<!-- 
-* bg iphone img is 363x762px
-* iphone 'screen' is apprx 300x530 -->

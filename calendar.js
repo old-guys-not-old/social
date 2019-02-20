@@ -108,4 +108,12 @@ function secondsToMs(d) {
     return `0${min}`.slice(-1) + ":" + `00${sec}`.slice(-2);
 }
 
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
 init();

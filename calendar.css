@@ -17,7 +17,7 @@ body {
 
 .head-bar {
 	height: 45px;
-	background-color: #e6ccff;
+	background-color: #585858;
 	color: #FFF;
 	text-shadow:
 		1px 1px 0 #000;
@@ -141,7 +141,7 @@ body {
 /* The popup form - hidden by default */
 
 .form-title {
-  text-align: left; 
+  text-align: left;
 }
 
 .form-popup {
@@ -178,14 +178,15 @@ body {
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: #585858;
+  color: #fff;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
   margin-bottom:10px;
-  opacity: 0.8;
+  opacity: 1.0;
 }
 
 /* Add a red background color to the cancel button */
@@ -195,5 +196,5 @@ body {
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+  opacity: .8;
 }

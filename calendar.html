@@ -1,35 +1,37 @@
-<html>
 <header>
    <title>Music Player</title>
    <link rel="stylesheet" type="text/css" href="calendar.css"/>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </header>
 <body>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
    <div id="screen">
    <div class="head-bar">
          <button class="create-event-button" onclick="openForm()">
-            Add Event
+            Create Event
          </button>
    </div>
 
    <!-- POPUP FORM -->
    <div class="form-popup" id="myForm">
-     <form action="/action_page.php" class="form-container">
-       <h1>Login</h1>
+     <form class="form-container">
+       <div class="form-title">Create Event</div>
 
-       <label for="email"><b>Email</b></label>
-       <input type="text" placeholder="Enter Email" name="email" required>
+        <input type="text" placeholder="Edit Event Title" name="title" required>
 
-       <label for="psw"><b>Password</b></label>
-       <input type="password" placeholder="Enter Password" name="psw" required>
-
-       <button type="submit" class="btn">Login</button>
-       <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
-     </form>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        
+       <button type="submit" class="btn" onclick="closeForm()">Create</button>
+      </form>
    </div>
 
-  <div id="player-song-name">
+  <div id="hour-column">
     <pre class="tab">M   Tu   W   Th   F   Sa   Su</pre>
   </div>
   <div class="hour-row">

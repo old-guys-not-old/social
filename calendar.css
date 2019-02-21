@@ -40,37 +40,10 @@ body {
 	border-radius: 4px;
 }
 
-#hour-column {
-	margin-top: 3px;
-	font-weight: bold;
-	font-size: 14px;
-	text-align: center;
-	margin-bottom:5px;
-}
 .dates-bar{
 	width: 250px;
 	height: 20px;
 }
-.hour-row{
-	width: 300px;
-	height: 15px;
-	border-bottom:.1px;
-	border-top:0px;
-	border-right: 0px;
-	border-left:0px;
-	border-style: solid;
-	border-colo: #404040;
-	margin-bottom: 8px;
-}
-.times{
-	font-size: 9px;
-	text-align: left;
-	margin-left: 5px;
-	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-}
-
-
-
 
 /* BEGIN FORM CSS */
 
@@ -114,8 +87,9 @@ body {
 /* Add styles to the form container */
 .form-container {
   width: 150px;
-  height: 300px;
+  height: 320px;
   padding: 10px;
+	margin:0px;
   background-color: white;
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
@@ -127,11 +101,17 @@ body {
   border-bottom: 1px solid #000;
   padding: 5px;
   height: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 16px 0;
+	float:left;
 }
 
 #time-selection{
 	margin-bottom:0;
+	float:left;
+	display:block;
+}
+.day-selection{
+	margin-bottom:5px;
 	float:left;
 	display:block;
 }
@@ -197,14 +177,6 @@ float:left;
 	margin-top: 12px;
 }
 
-.day{
-	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-	color:#585858;
-	margin:0px;
-	display:inline;
-	margin-left:7px;
-	margin-right:7px;
-}
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
@@ -244,4 +216,29 @@ font-weight:bold;
 }
 #cancel-button-top:hover{
 	color:#585858;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 41px auto auto auto auto auto auto auto;
+	max-width:300px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	color: #585858;
+}
+.grid-item-top {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  font-size: 8px;
+  text-align: center;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	color: #585858;
+	font-size:14px;
+	font-weight:bold;
 }

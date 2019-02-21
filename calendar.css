@@ -24,11 +24,23 @@ body {
 		1px 1px 0 #000;
 
 }
+.home-button {
+	float: left;
+	padding:5px;
+	margin-top: 9px;
+	margin-left: 9px;
+	border-radius: 4px;
+	width: 26px;
+	height: 26px;
+	background-color: white;
+	border-color: lightgrey;
+	color:#585858;
+}
 
 #logo{
 	max-height: 40px;
 	padding-top:5px;
-	margin-left:30px;
+	
 }
 
 /* how do i vertically center this stupid thing*/
@@ -168,13 +180,15 @@ float:left;
 	width: 300px;
 	height: 45px;
 	display: inline-flex;
+	color:#585858;
 }
 .current-week{
 	font-size: 10px;
 	width: 90px;
 	font-weight: bold;
 	text-align: center;
-	margin-top: 12px;
+	margin-top: 13px;
+	color:#585858;
 }
 
 

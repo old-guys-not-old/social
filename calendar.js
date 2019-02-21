@@ -31,6 +31,7 @@ function submitForm(){
     starthour=start[0]+start[1];
     endhour=end[0]+end[1];
     diff=endhour-starthour
+    mid=Math.floor(diff/2);
     string=starthour+"-"+day;
     var i;
   for (i = 0; i <= diff; i++) {
@@ -38,11 +39,10 @@ function submitForm(){
     console.log(string)
     document.getElementById(string).style.backgroundColor='#585858';
     document.getElementById(string).style.color='white';
+    if(i==mid){
     document.getElementById(string).innerHTML=eventTitle;
   }
-    document.getElementById(string).style.backgroundColor='#585858';
-    document.getElementById(string).style.color='white';
-    document.getElementById(string).innerHTML=eventTitle;
+}
 }
 }
 

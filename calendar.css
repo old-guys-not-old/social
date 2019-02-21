@@ -242,3 +242,10 @@ font-weight:bold;
 	font-size:14px;
 	font-weight:bold;
 }
+
+#form-screen{
+		height: 485px;
+		width: 300px;
+		text-align: center;
+		position: absolute;
+}

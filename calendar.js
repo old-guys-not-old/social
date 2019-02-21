@@ -51,9 +51,14 @@ function submitForm(){
 function toggleForm(){
 if (document.getElementById("myForm").style.display=="block"){
   document.getElementById("myForm").style.display = "none";
-
+  document.getElementById("form-screen").style.opacity=0;
 }
   else {
     document.getElementById("myForm").style.display = "block";
+    document.getElementById("form-screen").style.backgroundColor="grey";
+    document.getElementById("form-screen").style.backgroundColor="grey";
+    document.getElementById("form-screen").style.opacity=.5;
+
+
   }
 }

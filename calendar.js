@@ -52,7 +52,11 @@ function populateCal(){
         var g=document.createElement("div");
         g.id=String(i) +"-" + String(j+currSunday);
         g.className="grid-item";
-        g.onclick=changeForm(String(i),String(j+currSunday))
+        //g.onclick=changeForm(String(i),String(j+currSunday))
+        g.addEventListener('click', function(){
+          str=j+currSunday
+          changeForm(i,str);
+        });
         g.onclick=toggleForm
         document.getElementById("grid-container").appendChild(g);
         }
@@ -62,11 +66,16 @@ function populateCal(){
 
 
 function changeForm(time,day){
-  console.log("2019-02-" + day)
-  console.log(String(parseInt(time)%24+1)+":00")
-  document.getElementById("day-selection").value="2019-02-" + day;
-  document.getElementById("start-time").defaultValue=time+":00"
-  document.getElementById("end-time").defaultValue=String(parseInt(time)%24+1)+":00"
+  //console.log("2019-02-" + day)
+  //console.log(String(parseInt(time)%24+1)+":00")
+  d="2019-02-" + day
+  var da= getQueryVariable("day");
+  console.log(d)
+  console.log(da)
+  console.log(time+":00")
+  document.getElementById("day-selection").value=d;
+  document.getElementById("start-time").defaultValue=String(time)+":00"
+  document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
 }
 
 function submitForm(){

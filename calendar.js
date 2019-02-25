@@ -6,6 +6,22 @@
 //     var elems = document.querySelectorAll('.datepicker');
 //     var instances = M.Datepicker.init(elems, options);
 // }
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd;
+}
+
+if (mm < 10) {
+  mm = '0' + mm;
+}
+
+today = mm + '/' + dd + '/' + yyyy;
+
+
 
 function getQueryVariable(variable)
 {
@@ -18,9 +34,47 @@ function getQueryVariable(variable)
        return(false);
 }
 
+function populateCal(){
+  var currSunday=24
+  var times=["9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10 pm", "11 pm", "12 am"]
+  k=0
+  for (var i = 9; i < 25; i++){
+    for (var j = -1; j < 7; j++){
+      if(j==-1){
+        var newDiv=document.createElement("div");
+        var newContent = document.createTextNode(times[k]);
+        newDiv.appendChild(newContent);
+        var currentDiv=document.getElementById("grid-container")
+        document.getElementById("grid-container").appendChild(newDiv);
+        k++
+        }
+      else{
+        var g=document.createElement("div");
+        g.id=String(i) +"-" + String(j+currSunday);
+        g.className="grid-item";
+        g.onclick=changeForm(String(i),String(j+currSunday))
+        g.onclick=toggleForm
+        document.getElementById("grid-container").appendChild(g);
+        }
+      }
+    }
+}
+
+
+function changeForm(time,day){
+  console.log("2019-02-" + day)
+  console.log(String(parseInt(time)%24+1)+":00")
+  document.getElementById("day-selection").value="2019-02-" + day;
+  document.getElementById("start-time").defaultValue=time+":00"
+  document.getElementById("end-time").defaultValue=String(parseInt(time)%24+1)+":00"
+}
+
 function submitForm(){
   if(getQueryVariable("title")){
     var eventTitle = getQueryVariable("title");
+    if (eventTitle.length>3){
+      eventTitle=eventTitle[0]+eventTitle[1]+".."
+    }
     var notes = getQueryVariable("notes");
     var start = getQueryVariable("start");
     var end = getQueryVariable("end");
@@ -36,7 +90,6 @@ function submitForm(){
     var i;
   for (i = 0; i <= diff; i++) {
     string=(parseInt(starthour)+i)+"-"+day;
-    console.log(string)
     document.getElementById(string).style.backgroundColor='#585858';
     document.getElementById(string).style.color='white';
     if(i==mid){
@@ -48,16 +101,21 @@ function submitForm(){
 
 
 
+
+
 function toggleForm(){
 if (document.getElementById("myForm").style.display=="block"){
   document.getElementById("myForm").style.display = "none";
   document.getElementById("form-screen").style.opacity=0;
+  document.getElementById("form-screen").style.display="none";
+
 }
   else {
     document.getElementById("myForm").style.display = "block";
     document.getElementById("form-screen").style.backgroundColor="grey";
     document.getElementById("form-screen").style.backgroundColor="grey";
     document.getElementById("form-screen").style.opacity=.5;
+    document.getElementById("form-screen").style.display="block";
 
 
   }

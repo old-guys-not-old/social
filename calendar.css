@@ -2,8 +2,6 @@
 	Global classes
 					*/
 body {
-	background-image: url("images/iphoneOL.jpg");
-	background-repeat: no-repeat;
 	font-family: Avenir, sans-serif;
 }
 
@@ -11,9 +9,11 @@ body {
 #screen {
 	height: 530px;
 	width: 300px;
-	margin: 105px 23px;
-	margin-left:31px;
 	text-align: center;
+	margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .head-bar {
@@ -40,7 +40,7 @@ body {
 #logo{
 	max-height: 40px;
 	padding-top:5px;
-	
+
 }
 
 /* how do i vertically center this stupid thing*/

@@ -267,8 +267,8 @@ font-weight:bold;
 }
 
 #form-screen{
-		height: 600px;
-		width: 375px;
+		height: 100%;
+		width: 	100%;
 		text-align: center;
 		position: absolute;
 		display:none;

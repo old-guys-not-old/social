@@ -23,8 +23,8 @@
      <form class="form-container" onsubmit="submitForm()">
        <p class="form-title">Create Event</p>
        <p id="cancel-button-top" onclick="toggleForm()">X</p>
-        <input type="text" placeholder="Event Title" name="title" required>
-        <input type="text" placeholder="Event Details" name="notes">
+        <input id="event-title" type="text" placeholder="Event Title" name="title" required>
+        <input id="event-details" type="text" placeholder="Event Details" name="notes">
         <p id="time-selection"> Select a Day</p>
         <input id="day-selection" type="date" name="day" value="2019-02-25" min="2018-01-01" max="2020-12-31">
         <p id="time-selection"> Select a Time</p>

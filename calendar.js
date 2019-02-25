@@ -92,6 +92,7 @@ function submitForm(){
     string=(parseInt(starthour)+i)+"-"+day;
     document.getElementById(string).style.backgroundColor='#585858';
     document.getElementById(string).style.color='white';
+    document.getElementById(string).onclick=eventDetails;
     if(i==mid){
     document.getElementById(string).innerHTML=eventTitle;
   }
@@ -101,14 +102,58 @@ function submitForm(){
 
 
 
+function eventDetails(){
+  var str=getQueryVariable("title")
+  var notes = getQueryVariable("notes");
+  var start = getQueryVariable("start");
+  var end = getQueryVariable("end");
+  var invite = getQueryVariable("invite");
+  var day = getQueryVariable("day");
+  document.getElementById("event-title").value=str;
+  document.getElementById("event-details").value=notes;
+  document.getElementById("start-time").value=start;
+  document.getElementById("end-time").value=end;
+  document.getElementById("start-time").value=start;
+  document.getElementById("guests-input").value=invite;
+  document.getElementById("day-selection").value=day;
+  toggleForm2()
+}
+
 
 
 function toggleForm(){
+  document.getElementById("event-title").value="";
+  document.getElementById("event-details").value="";
+  document.getElementById("start-time").value="";
+  document.getElementById("end-time").value="";
+  document.getElementById("start-time").value="";
+  document.getElementById("guests-input").value="";
+  document.getElementById("day-selection").value="";
 if (document.getElementById("myForm").style.display=="block"){
   document.getElementById("myForm").style.display = "none";
   document.getElementById("form-screen").style.opacity=0;
   document.getElementById("form-screen").style.display="none";
 
+}
+  else {
+    document.getElementById("myForm").style.display = "block";
+    document.getElementById("form-screen").style.backgroundColor="grey";
+    document.getElementById("form-screen").style.backgroundColor="grey";
+    document.getElementById("form-screen").style.opacity=.5;
+    document.getElementById("form-screen").style.display="block";
+
+
+  }
+}
+
+
+
+
+function toggleForm2(){
+if (document.getElementById("myForm").style.display=="block"){
+  document.getElementById("myForm").style.display = "none";
+  document.getElementById("form-screen").style.opacity=0;
+  document.getElementById("form-screen").style.display="none";
 }
   else {
     document.getElementById("myForm").style.display = "block";

@@ -3,12 +3,14 @@
 					*/
 body {
 	font-family: Avenir, sans-serif;
+	height:600px;
+	width: 300px;
 }
 
 
 #screen {
 	height: 550px;
-	width: 300px;
+	width: 375px;
 	text-align: center;
 	margin-bottom: 0px;
   margin-top: 0px;
@@ -239,7 +241,7 @@ font-weight:bold;
 #grid-container {
   display: grid;
   grid-template-columns: 41px auto auto auto auto auto auto auto;
-	max-width:300px;
+	max-width:375px;
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);

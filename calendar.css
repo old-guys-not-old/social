@@ -44,7 +44,6 @@ body {
 #logo{
 	max-height: 40px;
 	padding-top:5px;
-
 }
 
 /* how do i vertically center this stupid thing*/
@@ -100,6 +99,7 @@ body {
 	font-size:10px;
 	border-radius: 3px;
 }
+
 
 /* Add styles to the form container */
 .form-container {

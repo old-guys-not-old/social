@@ -1,6 +1,7 @@
 
 <head>
 <script src="jquery-3.3.1.min.js"></script>
+<script src="chat.js"></script>
 </head>
 <header>
    <title>Up4Social</title>
@@ -14,22 +15,25 @@
    <div id="screen">
    <div class="head-bar">
      <img id="logo" src="images/Logo.png">
-         <a class="create-event-button" href="./index.html">
-            <span backgroundColor="white" class=" glyphicon glyphicon-calendar"></span>
-         </a>
+<a href='./index.html'>
+     <button class="calendar-button">
+        <span backgroundColor="white" class="	glyphicon glyphicon-calendar"></span>
+     </button>
+     </a>
    </div>
     <div class='preview-chat-screen'>
       <div class='preview-chat-box'>
+        <h3 class='event-title'>Event 1</h3>
       </div>
     </div>
     <div class="form-popup" id="myForm">
      <form class="form-container" onsubmit="submitForm()">
        <p class="chat-title">Event Title</p>
-       <p class="cancel-button-top" onclick="toggleForm()">X</p>
-       <div class="chat-box">
+       <p class="cancel-button-top" onclick="toggleForm()">X</p><br>
+       <div id="chat-box">
           <!-- put fake conversation in here -->
        </div>
-       <input id="message-input" type="text" placeholder="Enter your message here" name="invite">
+       <input id="message-input" type="text" placeholder="Enter your message here" name="chat">
       </form>
    </div>
 <!--     <svg class='chat-screen'>
@@ -39,6 +43,9 @@
     </svg> -->
 </div>
 </body>
+<script>populate()</script>
+
+</script>
 <script>
   $(".preview-chat-box").click(function() {
     if (document.getElementById("myForm").style.display=="block"){
@@ -72,4 +79,3 @@
   });
 </script>
 </html>
-

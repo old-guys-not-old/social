@@ -1,3 +1,7 @@
+
+<head>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
 <header>
    <title>Up4Social</title>
    <link rel="stylesheet" type="text/css" href="chat.css"/>
@@ -14,10 +18,20 @@
             <span backgroundColor="white" class=" glyphicon glyphicon-calendar"></span>
          </a>
    </div>
-    <div class='chat-screen'>
-      <div class='chat-box'>
+    <div class='preview-chat-screen'>
+      <div class='preview-chat-box'>
       </div>
     </div>
+    <div class="form-popup" id="myForm">
+     <form class="form-container" onsubmit="submitForm()">
+       <p class="chat-title">Event Title</p>
+       <p class="cancel-button-top" onclick="toggleForm()">X</p>
+       <div class="chat-box">
+          <!-- put fake conversation in here -->
+       </div>
+       <input id="message-input" type="text" placeholder="Enter your message here" name="invite">
+      </form>
+   </div>
 <!--     <svg class='chat-screen'>
       <rect width="90%" height="40%" class='chat-box' style="fill:white;stroke-width:3;stroke:rgb(0,0,0)">
 
@@ -25,5 +39,37 @@
     </svg> -->
 </div>
 </body>
+<script>
+  $(".preview-chat-box").click(function() {
+    if (document.getElementById("myForm").style.display=="block"){
+      document.getElementById("myForm").style.display = "none";
+      document.getElementById("form-screen").style.opacity=0;
+      document.getElementById("form-screen").style.display="none";
+
+    }
+    else {
+      document.getElementById("myForm").style.display = "block";
+      document.getElementById("form-screen").style.backgroundColor="grey";
+      document.getElementById("form-screen").style.backgroundColor="grey";
+      document.getElementById("form-screen").style.opacity=.5;
+      document.getElementById("form-screen").style.display="block";
+    }
+  });
+  $(".cancel-button-top").click(function() {
+    if (document.getElementById("myForm").style.display=="block"){
+      document.getElementById("myForm").style.display = "none";
+      document.getElementById("form-screen").style.opacity=0;
+      document.getElementById("form-screen").style.display="none";
+
+    }
+    else {
+      document.getElementById("myForm").style.display = "block";
+      document.getElementById("form-screen").style.backgroundColor="grey";
+      document.getElementById("form-screen").style.backgroundColor="grey";
+      document.getElementById("form-screen").style.opacity=.5;
+      document.getElementById("form-screen").style.display="block";
+    }
+  });
+</script>
 </html>
 

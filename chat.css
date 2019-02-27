@@ -7,17 +7,37 @@ body {
 	width: 375px;
 }
 
-.chat-screen {
+#message-input{
+	margin-top:20px;
+}
+
+.preview-chat-screen {
 	position: relative;
 	align-items: center;
 	height:100%;
 }
 
-.chat-box {
+.preview-chat-box {
 	margin: 20px;
 	display: inline-block;
 	height: 100px;
 	width: 80%;
+	border-style: solid;
+  	border-width: 2px;
+  	border-color: grey;
+}
+
+.chat-title {
+	    float: left;
+    margin-left: 7px;
+    font-weight: bold;
+    font-size: 14;
+}
+
+.chat-box {
+	margin-top: 20px;
+	height: 80%;
+	width: 100%;
 	border-style: solid;
   	border-width: 2px;
   	border-color: grey;
@@ -119,8 +139,8 @@ body {
   display: none;
   position: absolute;
   top: 80px;
-  left: 110px;
-  border: 1px solid #000;
+  left: 35px;
+  border: 3px solid #000;
   z-index: 9;
 	font-size:10px;
 	border-radius: 3px;
@@ -128,7 +148,7 @@ body {
 
 /* Add styles to the form container */
 .form-container {
-  width: 150px;
+  width: 300px;
   height: 320px;
   padding: 10px;
 	margin:0px;
@@ -138,13 +158,13 @@ body {
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #000;
-  padding: 5px;
-  height: 15px;
-  margin: 5px 0 16px 0;
-	float:left;
+  	width: 100%;
+    border: 2px solid #000;
+    padding: 5px;
+    height: 25px;
+    margin: 5px 0 10px 0;
+    float: left;
+    border-radius: 10px;
 }
 
 #time-selection{
@@ -248,15 +268,15 @@ cursor:pointer;
 #cancel-button:hover{
 	color:#585858;
 }
-#cancel-button-top{
-font-size: 10px;
-color:grey;
-cursor:pointer;
-width:30px;
-float:,right;
-display:inline;
-margin-right:-15px;
-font-weight:bold;
+.cancel-button-top{
+	font-size: 13px;
+	color:black;
+	cursor:pointer;
+	width:30px;
+	float:right;
+	display:inline;
+	margin-top: 2px;
+	font-weight:bold;
 }
 #cancel-button-top:hover{
 	color:#585858;

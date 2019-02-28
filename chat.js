@@ -3,7 +3,9 @@ function populate()
 {
 	console.log("fuck!");
   var message = getQueryVariable("chat");
-	document.getElementById("chat-box").innerHTML='<h5 id="message">Ryan: '+ message+ '</h5>';
+	if(message){
+		document.getElementById("chat-box").innerHTML='<h5 id="message">Ryan: '+ message+ '</h5>';
+	}
 }
 
 

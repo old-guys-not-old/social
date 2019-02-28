@@ -5,7 +5,7 @@
 <header>
    <title>Up4Social</title>
    <link rel="stylesheet" type="text/css" href="chat.css"/>
-   <script src="calendar.js"></script>
+   <script src="chat.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -18,25 +18,31 @@
      </a>
      <img id="logo" src="images/Logo.png">
          <a class="create-event-button" href="./index.html">
-            <span backgroundColor="white" class=" glyphicon glyphicon-calendar"></span>
+            <span backgroundColor="white" class="glyphicon glyphicon-calendar"></span>
          </a>
    </div>
-   <p class="sub-title"> Message Groups </p>
+   <div class='social-feed'>
+    <p class="sub-title"> Groups Messages - Events </p>
     <div class='preview-chat-screen'>
       <div class='preview-chat-box'>
-        <p> 6x6 Futsal </p>
+          <p class="event-name"> 6x6 Futsal game</p>
+          <div class='chat-button'>
+            <span class="glyphicon glyphicon-comment" onclick="toggleForm()">
+          </div>
       </div>
     </div>
     <div class="form-popup" id="myForm">
-     <form class="form-container" onsubmit="submitForm()">
+     <div class="form-container">
        <p class="chat-title">6x6 Futsal</p>
        <p class="cancel-button-top" onclick="toggleForm()">X</p>
        <div class="chat-box">
           <!-- put fake conversation in here -->
        </div>
-       <input id="message-input" type="text" placeholder="Enter your message here" name="invite">
-      </form>
+       <input id="message-input" type="text" placeholder="Enter your message here" name="message-entry-bar">
+<!--        <button id="message-submit" title="^" type="submit" onpress="messageSubmitted()" name="message-submit" > -->
+      </div>
    </div>
+ </div>
 <!--     <svg class='chat-screen'>
       <rect width="90%" height="40%" class='chat-box' style="fill:white;stroke-width:3;stroke:rgb(0,0,0)">
 

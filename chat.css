@@ -11,29 +11,58 @@ body {
 	margin-top:20px;
 }
 
+.social-feed {
+    width: 375px;
+    height: 500px;
+    background-color: #f5f5f5;
+    display: block;
+    margin-top: -5px;
+}
+
+.chat-button {
+    display:inline;
+    margin-left: 190px;
+}
+
+.event-name {
+    color: #585858;
+    font-size: 14;
+    padding: 5px;
+    text-align: left;
+    display: inline;
+    width: 150px;
+	font-weight:bold;
+
+}
+
 .preview-chat-screen {
 	position: relative;
 	align-items: center;
+	background-color: #f5f5f5;
 	height:100%;
 }
 
 .preview-chat-box {
-	margin: 20px;
-	display: inline-block;
-	height: 100px;
-	width: 80%;
-	border-style: solid;
-  	border-width: 2px;
-  	border-color: grey;
-
+	padding: 5px;
+  	display: inline-block;
+    width: 340px;
+    height: 100px;
+    float: center;
+    background-color: white;
+    margin-left: 5px;
+    /*border-style: solid;*/
+    /*border-width: 2px;*/
+    border-radius: 10px;
+	background-image: url(images/football.png);
+	background-size: 300px;
 }
 .sub-title {
     color: #585858;
     font-size: 20;
     padding: 5px;
     width: 300px;
-    float: left;
-    text-align: left;
+    margin-left: -5;
+    padding-top: 10;
 }
 .chat-title {
 	    float: left;
@@ -41,6 +70,7 @@ body {
     font-weight: bold;
     font-size: 14;
 }
+
 
 .chat-box {
 	margin-top: 20px;

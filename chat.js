@@ -14,6 +14,7 @@ function populate()
 {
   var message = getQueryVariable("chat");
 	if(message){
+    var message = message.split("+").join(" ")
 		document.getElementById("chat-box").innerHTML='<h5 id="message">Ryan: '+ message+ '</h5>';
 	}
 }

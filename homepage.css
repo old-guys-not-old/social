@@ -1,0 +1,136 @@
+body {
+	font-family: Avenir, sans-serif;
+	height:600px;
+	width: 375px;
+}
+#screen {
+	height: 600px;
+	width: 375px;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	float:left;
+}
+.head-bar {
+	height: 45px;
+	background-color: #585858;
+	color: #FFF;
+	text-shadow: 1px 1px 0 #000;
+
+}
+.greeting{
+  float: left;
+  padding: 5px;
+  margin-top: 12px;
+}
+#logo{
+	max-height: 40px;
+	padding-top:5px;
+  margin-right: 60px;
+}
+#controls{
+	max-height: 20px;
+	padding-top:5px;
+  background-color: white;
+	border-color: lightgrey;
+	color:#585858;
+  border-radius: 4px;
+  margin-top: 12px;
+  padding: 5px;
+  margin-right: 5px;
+  float: right;
+
+}
+.social-feed {
+    width: 375px;
+    height: 500px;
+    background-color: lightgrey;
+    display: block;
+    margin-top: -5px;
+}
+.sub-title {
+    color: #585858;
+    font-size: 20;
+    padding: 5px;
+    width: 300px;
+    float: left;
+    text-align: left;
+}
+.event-feed {
+    width: 360px;
+    float: left;
+    height: 100px;
+    background-color: white;
+    margin-left: 5px;
+    border-radius: 10px;
+		background-image: url(images/football.png);
+
+
+}
+
+.event-head {
+    display: flex;
+    width: 360px;
+    height: 20px;
+		margin-bottom: 6px;
+
+}
+.event-name {
+    color: #585858;
+    font-size: 14;
+    padding: 5px;
+    text-align: left;
+    display: flex;
+    width: 150px;
+		font-weight:bold;
+
+}
+#feed-edit {
+    background-color: white;
+    border-color: lightgrey;
+    border-radius: 4px;
+    max-height: 15px;
+    margin-top: 5px;
+    margin-left: 190px;
+}
+.event-info {
+    color: #585858;
+    font-size: 14;
+    padding: 5px;
+    text-align: left;
+    display: flex;
+    width: 150px;
+
+}
+.event-descriptions{
+		color: #585858;
+		font-size: 12;
+		padding: 1px;
+		width: 300px;
+		float: left;
+		text-align: left;
+		max-height: 8px;
+		margin-top: 2px;
+		margin-left: 5px;
+}
+.tail-bar {
+	height: 55px;
+	background-color: #585858;
+	color: #FFF;
+	text-shadow: 1px 1px 0 #000;
+	margin-bottom: 60px;
+	display: flex;
+}
+.tail-features{
+	width: 187.5px;
+	height: 55px;
+	font-size: 14;
+	text-align: center;
+	border-width: thin;
+	border-color: black;
+	border-style: solid;
+	padding: 10px;
+	color: white;
+}

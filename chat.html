@@ -13,18 +13,23 @@
 <body>
    <div id="screen">
    <div class="head-bar">
+     <a href='./homepage.html'>
+      <img class="home-button" src="images/home-button.png" >
+     </a>
      <img id="logo" src="images/Logo.png">
          <a class="create-event-button" href="./index.html">
             <span backgroundColor="white" class=" glyphicon glyphicon-calendar"></span>
          </a>
    </div>
+   <p class="sub-title"> Message Groups </p>
     <div class='preview-chat-screen'>
       <div class='preview-chat-box'>
+        <p> 6x6 Futsal </p>
       </div>
     </div>
     <div class="form-popup" id="myForm">
      <form class="form-container" onsubmit="submitForm()">
-       <p class="chat-title">Event Title</p>
+       <p class="chat-title">6x6 Futsal</p>
        <p class="cancel-button-top" onclick="toggleForm()">X</p>
        <div class="chat-box">
           <!-- put fake conversation in here -->
@@ -72,4 +77,3 @@
   });
 </script>
 </html>
-

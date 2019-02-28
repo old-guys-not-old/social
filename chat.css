@@ -367,3 +367,10 @@ cursor:pointer;
 		position: absolute;
 		display:none;
 }
+
+.calendar-button{
+	float: right;
+margin: 5px;
+padding: 4px;
+border-radius: 4px;
+}

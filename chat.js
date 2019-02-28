@@ -1,3 +1,15 @@
+
+
+function populate()
+{
+	console.log("fuck!");
+  var message = getQueryVariable("chat");
+	if(message){
+		document.getElementById("chat-box").innerHTML='<h5 id="message">Ryan: '+ message+ '</h5>';
+	}
+}
+
+
 function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
@@ -7,12 +19,4 @@ function getQueryVariable(variable)
                if(pair[0] == variable){return pair[1];}
        }
        return(false);
-}
-
-
-function populate(){
-  var da= getQueryVariable("chat");
-  if(da){
-  document.getElementById("chat-box").innerHTML='<h5 id="message">'+'Ryan:'+da+'</h5>';
-}
 }

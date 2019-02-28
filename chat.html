@@ -6,7 +6,7 @@
 <header>
    <title>Up4Social</title>
    <link rel="stylesheet" type="text/css" href="chat.css"/>
-   <script src="calendar.js"></script>
+   <script src="chat.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -14,6 +14,9 @@
 <body>
    <div id="screen">
    <div class="head-bar">
+     <a href='./homepage.html'>
+      <img class="home-button" src="images/home-button.png" >
+     </a>
      <img id="logo" src="images/Logo.png">
 <a href='./index.html'>
      <button class="calendar-button">
@@ -21,21 +24,29 @@
      </button>
      </a>
    </div>
+   <div class='social-feed'>
+    <p class="sub-title"> Groups Messages - Events </p>
     <div class='preview-chat-screen'>
       <div class='preview-chat-box'>
-        <h3 class='event-title'>Event 1</h3>
+          <p class="event-name"> 6x6 Futsal game</p>
+          <div class='chat-button'>
+            <span class="glyphicon glyphicon-comment">
+          </div>
       </div>
     </div>
     <div class="form-popup" id="myForm">
-     <form class="form-container" onsubmit="submitForm()">
-       <p class="chat-title">Event Title</p>
-       <p class="cancel-button-top" onclick="toggleForm()">X</p><br>
+     <form class="form-container">
+       <p class="chat-title">6x6 Futsal</p>
+       <p class="cancel-button-top" onclick="toggleForm()">X</p>
        <div id="chat-box">
           <!-- put fake conversation in here -->
        </div>
        <input id="message-input" type="text" placeholder="Enter your message here" name="chat">
       </form>
    </div>
+ </div>
+ <script>populate()</script>
+
 <!--     <svg class='chat-screen'>
       <rect width="90%" height="40%" class='chat-box' style="fill:white;stroke-width:3;stroke:rgb(0,0,0)">
 
@@ -56,7 +67,6 @@
     }
     else {
       document.getElementById("myForm").style.display = "block";
-      document.getElementById("form-screen").style.backgroundColor="grey";
       document.getElementById("form-screen").style.backgroundColor="grey";
       document.getElementById("form-screen").style.opacity=.5;
       document.getElementById("form-screen").style.display="block";

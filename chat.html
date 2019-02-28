@@ -27,22 +27,24 @@
       <div class='preview-chat-box'>
           <p class="event-name"> 6x6 Futsal game</p>
           <div class='chat-button'>
-            <span class="glyphicon glyphicon-comment" onclick="toggleForm()">
+            <span class="glyphicon glyphicon-comment">
           </div>
       </div>
     </div>
     <div class="form-popup" id="myForm">
-     <div class="form-container">
+     <form class="form-container">
        <p class="chat-title">6x6 Futsal</p>
        <p class="cancel-button-top" onclick="toggleForm()">X</p>
-       <div class="chat-box">
+       <div id="chat-box">
           <!-- put fake conversation in here -->
        </div>
-       <input id="message-input" type="text" placeholder="Enter your message here" name="message-entry-bar">
+       <input id="message-input" type="text" placeholder="Enter your message here" name="chat">
 <!--        <button id="message-submit" title="^" type="submit" onpress="messageSubmitted()" name="message-submit" > -->
-      </div>
+      </form>
    </div>
  </div>
+ <script>populate()</script>
+
 <!--     <svg class='chat-screen'>
       <rect width="90%" height="40%" class='chat-box' style="fill:white;stroke-width:3;stroke:rgb(0,0,0)">
 
@@ -60,7 +62,6 @@
     }
     else {
       document.getElementById("myForm").style.display = "block";
-      document.getElementById("form-screen").style.backgroundColor="grey";
       document.getElementById("form-screen").style.backgroundColor="grey";
       document.getElementById("form-screen").style.opacity=.5;
       document.getElementById("form-screen").style.display="block";

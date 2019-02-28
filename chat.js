@@ -1,9 +1,19 @@
 
-function messageSubmitted()
+function populate()
 {
 	console.log("fuck!");
-    var message = document.getElementById('message-input').value;
+  var message = getQueryVariable("chat");
+	document.getElementById("chat-box").innerHTML='<h5 id="message">Ryan: '+ message+ '</h5>';
+}
 
-    var chatBox = document.getElementById("chat-box");
-    chatBox.appendChild("<p>hey</p>");
+
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
 }

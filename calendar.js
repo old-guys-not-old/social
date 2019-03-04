@@ -70,9 +70,9 @@ function changeForm(time,day){
   //console.log(String(parseInt(time)%24+1)+":00")
   d="2019-02-" + day
   var da= getQueryVariable("day");
-  console.log(d)
-  console.log(da)
-  console.log(time+":00")
+  //console.log(d)
+  //console.log(da)
+  //console.log(time+":00")
   document.getElementById("day-selection").value=d;
   document.getElementById("start-time").defaultValue=String(time)+":00"
   document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
@@ -82,7 +82,7 @@ function submitForm(){
   if(getQueryVariable("title")){
     var eventTitle = getQueryVariable("title");
     if (eventTitle.length>3){
-      eventTitle=eventTitle[0]+eventTitle[1]+".."
+      eventTitle=eventTitle[0]+eventTitle[1]+eventTitle[2]+eventTitle[3]+".."
     }
     var notes = getQueryVariable("notes");
     var start = getQueryVariable("start");
@@ -103,6 +103,7 @@ function submitForm(){
     document.getElementById(string).style.color='white';
     document.getElementById(string).onclick=eventDetails;
     if(i==mid){
+    document.getElementById(string).style.fontSize="7px";
     document.getElementById(string).innerHTML=eventTitle;
   }
 }
@@ -118,6 +119,8 @@ function eventDetails(){
   var end = getQueryVariable("end");
   var invite = getQueryVariable("invite");
   var day = getQueryVariable("day");
+  start=(String(parseInt(start)%24)+":00")
+  end=(String(parseInt(end)%24)+":00")
   document.getElementById("event-title").value=str;
   document.getElementById("event-details").value=notes;
   document.getElementById("start-time").value=start;
@@ -125,12 +128,14 @@ function eventDetails(){
   document.getElementById("start-time").value=start;
   document.getElementById("guests-input").value=invite;
   document.getElementById("day-selection").value=day;
+  document.getElementById("create-event").innerHTML="Edit Event"
   toggleForm2()
 }
 
 
 
 function toggleForm(){
+  document.getElementById("create-event").innerHTML="Create Event"
   document.getElementById("event-title").value="";
   document.getElementById("event-details").value="";
   document.getElementById("start-time").value="";

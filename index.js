@@ -18,3 +18,12 @@ function populate()
 		document.getElementById("chat-box").innerHTML='<h5 id="message">Abizar: '+ message+ '</h5>';
 	}
 }
+
+
+function submitfunction(){
+  console.log("yeet")
+  document.getElementById("myForm").style.display="block";
+  var message = document.getElementById("message-input").value;
+  document.getElementById("message-input").value="";
+  document.getElementById("chat-box").innerHTML=document.getElementById("chat-box").innerHTML+'<h5 id="message">Abizar: '+ message+ '</h5>';
+}

@@ -35,7 +35,7 @@ function getQueryVariable(variable)
 }
 
 function populateCal(){
-  var currSunday=24
+  var currSunday=3
   var times=["9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10 pm", "11 pm", "12 am"]
   k=0
   for (var i = 9; i < 25; i++){
@@ -50,7 +50,7 @@ function populateCal(){
         }
       else{
         var g=document.createElement("div");
-        g.id=String(i) +"-" + String(j+currSunday);
+        g.id=String(i) +"-" + "0"+String(j+currSunday);
         g.className="grid-item";
         //g.onclick=changeForm(String(i),String(j+currSunday))
         g.addEventListener('click', function(){
@@ -58,6 +58,7 @@ function populateCal(){
           changeForm(i,str);
         });
         g.onclick=toggleForm
+        g.style.backgroundColor="#f2f2f2"
         document.getElementById("grid-container").appendChild(g);
         }
       }
@@ -68,7 +69,7 @@ function populateCal(){
 function changeForm(time,day){
   //console.log("2019-02-" + day)
   //console.log(String(parseInt(time)%24+1)+":00")
-  d="2019-02-" + day
+  d="2019-03-" + day
   var da= getQueryVariable("day");
   //console.log(d)
   //console.log(da)
@@ -81,8 +82,8 @@ function changeForm(time,day){
 function submitForm(){
   if(getQueryVariable("title")){
     var eventTitle = getQueryVariable("title");
-    if (eventTitle.length>3){
-      eventTitle=eventTitle[0]+eventTitle[1]+eventTitle[2]+eventTitle[3]+".."
+    if (eventTitle.length>5){
+      eventTitle=eventTitle[0]+eventTitle[1]+eventTitle[2]+eventTitle[3]+eventTitle[4]+".."
     }
     var notes = getQueryVariable("notes");
     var start = getQueryVariable("start");
@@ -104,6 +105,7 @@ function submitForm(){
     document.getElementById(string).onclick=eventDetails;
     if(i==mid){
     document.getElementById(string).style.fontSize="7px";
+    var eventTitle = eventTitle.split("+").join(" ")
     document.getElementById(string).innerHTML=eventTitle;
   }
 }
@@ -119,9 +121,12 @@ function eventDetails(){
   var end = getQueryVariable("end");
   var invite = getQueryVariable("invite");
   var day = getQueryVariable("day");
+  var notes = notes.split("+").join(" ");
+  var invite = invite.split("+").join(" ")
+  var title = str.split("+").join(" ")
   start=(String(parseInt(start)%24)+":00")
   end=(String(parseInt(end)%24)+":00")
-  document.getElementById("event-title").value=str;
+  document.getElementById("event-title").value=title;
   document.getElementById("event-details").value=notes;
   document.getElementById("start-time").value=start;
   document.getElementById("end-time").value=end;

@@ -19,7 +19,8 @@ body {
 	background-color: #585858;
 	color: #FFF;
 	text-shadow: 1px 1px 0 #000;
-
+	position: fixed;
+	width: 375px;
 }
 .greeting{
   float: left;

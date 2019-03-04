@@ -146,8 +146,17 @@ align-content: center;
 	height:100%;
 }
 
+#mimosas-preview{
+	background-image: url(images/mimosas.png);
+}
+
+#beach-preview{
+	background-image: url(images/beach.JPG);
+}
+
 .preview-chat-box {
 	padding: 5px;
+	margin-bottom:10px;
   	display: inline-block;
     width: 340px;
     height: 100px;

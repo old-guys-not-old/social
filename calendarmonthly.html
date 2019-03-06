@@ -1,0 +1,67 @@
+<header>
+   <title>Up4Social</title>
+   <link rel="stylesheet" type="text/css" href="calendar.css"/>
+   <script src="calendarmonthly.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</header>
+<body>
+   <div id="screen">
+   <div class="head-bar">
+     <a href='./index.html'>
+      <img class="home-button" src="images/home-button.png" >
+     </a>
+    <a href='./index.html'><img id="logo" src="images/Logo.png"></a>
+         <button class="create-event-button" onclick="toggleForm()">
+            <span backgroundColor="white" class="	glyphicon glyphicon-edit"></span>
+         </button>
+   </div>
+   <div id="event"></div>
+   <!-- POPUP FORM -->
+   <div id="form-screen" onclick="toggleForm()">
+     </div>
+   <div class="form-popup" id="myForm">
+     <form class="form-container" onsubmit="submitForm()">
+       <p id="create-event" class="form-title">Create Event</p>
+       <p id="cancel-button-top" onclick="toggleForm()">X</p>
+        <input id="event-title" type="text" placeholder="Event Title" name="title" required>
+        <input id="event-details" type="text" placeholder="Event Details" name="notes">
+        <p id="time-selection"> Select a Day</p>
+        <input id="day-selection" type="date" name="day" value="2019-02-25" min="2018-01-01" max="2020-12-31">
+        <p id="time-selection"> Select a Time</p><br>
+        <input id="start-time" class="time-selection" type="time"  name="start" required>
+        <input id="end-time" class="time-selection" type="time" name="end" required>
+        <input id="guests-input" type="text" placeholder="Invite users" name="invite">
+       <input id="create-event-button-popup" type="submit" class="btn"></input>
+       <p id="cancel-button" onclick="toggleForm()">Cancel</p>
+      </form>
+   </div>
+<div><a href="calendar.html"><h5 style="color:#585858;" id="weekly-view" class="view">Weekly View</h5></a> <h5 style="color:#4e80ce;" id="monthly-view" class="view">Monthly View</h5></div>
+  <h4> March</h4>
+   <div style="grid-template-columns: auto auto auto auto auto auto auto;"id="grid-container">
+     <div class="grid-item-top">Su</div>
+     <div class="grid-item-top">M</div>
+     <div class="grid-item-top">Tu</div>
+     <div class="grid-item-top">W</div>
+     <div class="grid-item-top">Th</div>
+     <div class="grid-item-top">F</div>
+     <div class="grid-item-top">Sa</div>
+   </div>
+   <script>populateCal()</script>
+   <script>submitForm()</script>
+
+    <div class="bottom-control">
+       <button class="change-week-button" onclick="backWeek()">
+          <div>Prev Week</div>
+          </button>
+       <div class="current-week" >
+            <p>(Mar 03 - Mar 9)<p>
+            </div>
+       <button class="change-week-button" onclick="forwardWeek()">
+          <div>Next Week</div>
+          </button>
+       </div>
+</div>
+</body>
+</html>

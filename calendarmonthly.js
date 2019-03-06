@@ -45,6 +45,8 @@ function populateCal(){
         g.className="grid-item";
         //g.onclick=changeForm(String(i),String(j+currSunday))
         g.onclick=toggleForm
+        g.style.height="50px"
+        g.style.borer="solid 5px"
         if (i>4 && i<36){
           g.style.backgroundColor="#f2f2f2"
           g.innerHTML=String(i-4)

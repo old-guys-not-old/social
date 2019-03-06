@@ -46,12 +46,18 @@ if(!b){
 if(b){
   document.getElementById("name-list").innerHTML="";
     b=jsUcfirst(b)
-    console.log("part1")
+    //for(var k=0;k<b.length;k++){
+    //  if (b[k]=" "){
+   //        var h =1;
+  //      first=b.slice(0,k);
+  //      last=jsUcfirst(b.slice(k+1));
+  //      b=first+last;
+  //    }
+  //   }
+    console.log(b)
     for (var i=0; i<names.length;i++){
-      console.log(names[i])
         nam[i]=names[i].substring(0,b.length)
         nam[i]=jsUcfirst(nam[i])
-        console.log(nam[i])
         if(nam[i]==b){
           document.getElementById("name-list").innerHTML=document.getElementById("name-list").innerHTML+"<li><a href='#'>"+names[i]+"</a></li>";
         }

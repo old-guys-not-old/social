@@ -1,5 +1,7 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
+
+var n;
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -59,8 +61,19 @@ if(b){
         nam[i]=names[i].substring(0,b.length)
         nam[i]=jsUcfirst(nam[i])
         if(nam[i]==b){
-          document.getElementById("name-list").innerHTML=document.getElementById("name-list").innerHTML+"<li><a href='#'>"+names[i]+"</a></li>";
+          //str=\"names[i]\";
+          var text = "\""+names[i]+"\"";
+          console.log(text)
+          document.getElementById("name-list").innerHTML=document.getElementById("name-list").innerHTML+"<li><a href='profile.html' onClick='profileView("+ text + ")'>"+names[i]+"</a></li>";
         }
     }
 }
+}
+
+function profileView(name){
+  localStorage.setItem("name",name);
+}
+
+function loadprofile(n){
+  document.getElementById("profile-name").innerHTML = n;
 }

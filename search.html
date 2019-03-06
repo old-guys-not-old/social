@@ -1,0 +1,74 @@
+<header>
+   <title>Up4Social</title>
+   <link rel="stylesheet" type="text/css" href="search.css"/>
+   <script src="search.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</header>
+
+<body>
+   <div id="screen">
+     <div class="head-bar">
+       <a href='./index.html'>
+        <img class="home-button" src="images/home-button.png" >
+       </a>
+       <a href='./index.html'>
+        <img id="logo" src="images/Logo.png">
+      </a>
+       </div>
+     <div class="mid-screen">
+       <p class="sub-title"> Find Friends </p>
+       <div class="search-bar">
+          <a> Name: </a>
+          <input type="text" id="name-input" onkeyup="nameList()" placeholder="Search for names..">
+        </div>
+        <div class="filter-bar">
+          <div class="filter-drop">
+            <button class="dropbtn" onclick="myFunction()">Add search criteria
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="filter-content" id="myDropdown">
+              <div class="filter-element">
+                <p id="age-select"> Age: </p>
+                <input id="age-in" type="text" >
+                <input id="age-in" type="text" >
+                </div>
+              <div class="filter-element">
+                <p id="school-select"> School: </p>
+                <input id="school-in" type="text" >
+              </div>
+              <div class="filter-element">
+                <p id="prof-select"> Profession: </p>
+                <input id="prof-in" type="text" >
+              </div>
+              <div class="filter-element">
+                <p id="city-select"> City: </p>
+                <input id="city-in" type="text" >
+              </div>
+              <div class="filter-element">
+                <p id="filter-sub"> Apply filter </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul id="name-list">
+          <li><a href="#">Adele</a></li>
+          <li><a href="#">Agnes</a></li>
+
+          <li><a href="#">Billy</a></li>
+          <li><a href="#">Bob</a></li>
+
+          <li><a href="#">Calvin</a></li>
+          <li><a href="#">Christina</a></li>
+          <li><a href="#">Cindy</a></li>
+        </ul>
+     </div>
+     <div class="tail-bar">
+        <p class="submit"> Search </p>
+
+
+     </div>
+</body>

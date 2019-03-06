@@ -296,3 +296,11 @@ font-weight:bold;
 	margin-left:50px;
 		color:#585858;
 }
+
+#home-button{
+	color:white;
+	float:left;
+	padding:8px;
+	margin-top:5px;
+	margin-left:10px;
+}

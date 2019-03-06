@@ -240,3 +240,11 @@ body {
   margin-top: 10px;
   margin-right: 10px;
 }
+
+#home-button{
+	color:white;
+	float:left;
+	padding:8px;
+	margin-top:5px;
+	margin-left:10px;
+}

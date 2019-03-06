@@ -187,6 +187,9 @@ float:left;
 	height: 45px;
 	display: inline-flex;
 	color:#585858;
+	position: absolute;
+	top: 560;
+	left: 35px;
 }
 .current-week{
 	font-size: 10px;
@@ -274,4 +277,22 @@ font-weight:bold;
 		text-align: center;
 		position: absolute;
 		display:none;
+}
+
+
+.view:hover{
+	cursor:pointer;
+}
+.view{
+	display:inline;
+	color:#4e80ce;
+}
+
+#weekly-view{
+	margin-right:50px;
+}
+
+#monthly-view{
+	margin-left:50px;
+		color:#585858;
 }

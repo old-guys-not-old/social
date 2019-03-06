@@ -1,7 +1,7 @@
 <header>
    <title>Up4Social</title>
    <link rel="stylesheet" type="text/css" href="calendar.css"/>
-   <script src="calendar.js"></script>
+   <script src="calendarmonthly.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -37,9 +37,9 @@
        <p id="cancel-button" onclick="toggleForm()">Cancel</p>
       </form>
    </div>
-<div><h5 id="weekly-view" class="view">Weekly View</h5> <a href="calendarmonthly.html"><h5 id="monthly-view" class="view">Monthly View</h5></a></div>
-   <div id="grid-container">
-     <div class="grid-item"></div>
+<div><a href="calendar.html"><h5 style="color:#585858;" id="weekly-view" class="view">Weekly View</h5></a> <h5 style="color:#4e80ce;" id="monthly-view" class="view">Monthly View</h5></div>
+  <h4> March</h4>
+   <div style="grid-template-columns: auto auto auto auto auto auto auto;"id="grid-container">
      <div class="grid-item-top">Su</div>
      <div class="grid-item-top">M</div>
      <div class="grid-item-top">Tu</div>

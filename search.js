@@ -25,3 +25,32 @@ function nameList() {
     }
   }
 }
+
+function jsUcfirst(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+function populate(){
+names=["Agnes", "Adele", "Christina","Billy","Calvin","Bob","Cindy","Garrett","Grant","Abizar","Donnie T"]
+var nam=[]
+b=document.getElementById("name-input").value;
+if(!b){
+  document.getElementById("name-list").innerHTML="";
+}
+if(b){
+  document.getElementById("name-list").innerHTML="";
+    b=jsUcfirst(b)
+    console.log("part1")
+    for (var i=0; i<names.length;i++){
+      console.log(names[i])
+        nam[i]=names[i].substring(0,b.length)
+        nam[i]=jsUcfirst(nam[i])
+        console.log(nam[i])
+        if(nam[i]==b){
+          document.getElementById("name-list").innerHTML=document.getElementById("name-list").innerHTML+"<li><a href='#'>"+names[i]+"</a></li>";
+        }
+    }
+}
+}

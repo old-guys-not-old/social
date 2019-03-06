@@ -33,7 +33,11 @@ function jsUcfirst(string)
 
 
 function populate(){
-names=["Agnes", "Adele", "Christina","Billy","Calvin","Bob","Cindy","Garrett","Grant","Abizar","Donnie T"]
+names=["Agnes", "Adele", "Christina","Billy","Calvin","Bob","Cindy","Garrett","Grant","Abizar","Donnie T","Adrienne Brosnan",
+"Sharilyn Tripodi","Cody Percell","Ashlee Bodkin","Zoe Latshaw","Chadwick Gregerson","Sherie Nolan","Delmar Prunty",
+"Sanora Fontana","Zada Suhr","Nancee Hudgins","Lashaun Ledet","Alene Topps","Florine Steppe","Gretta Eck","Effie Guffey",
+"Delores Wingham","Roxann Reddell","Candance Mcclaskey","Mitzie Bedolla","Petronila Rosin","Josefa Omeara","Sherise Hallock",
+"Karyl Albers","Alden Berthold","Hal Buescher","Margit Gratz","Ciera Mcevoy","Gaston Kincaid","Kasey Govan"]
 var nam=[]
 b=document.getElementById("name-input").value;
 if(!b){

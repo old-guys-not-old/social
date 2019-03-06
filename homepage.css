@@ -20,6 +20,10 @@ body {
 	text-shadow: 1px 1px 0 #000;
 
 }
+.mid-screen{
+	height: 500px;
+	background-color: #D9E7FB;
+}
 .greeting{
   float: left;
   padding: 5px;

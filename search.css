@@ -42,6 +42,7 @@ body {
     padding: 5px;
     width: 300px;
     text-align: left;
+    padding-left: 12px;
 }
 .search-bar {
   overflow: hidden;

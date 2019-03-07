@@ -1,0 +1,38 @@
+<header>
+   <title>Up4Social</title>
+   <link rel="stylesheet" type="text/css" href="profile.css"/>
+   <script src="profile.js"></script>
+   <script src="search.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</header>
+<body>
+   <div id="screen">
+   <div class="head-bar">
+     <a href='./index.html'>
+      <img class="home-button" src="images/home-button.png" >
+     </a>
+    <a href='./index.html'><img id="logo" src="images/Logo.png"></a>
+   </div>
+   <h2 id='profile-name'>Garrett</h2>
+   <img src="./images/garrett.jpg" id='profile-pic'alt="Avatar">
+   <hr class='striped-border'>
+   <p><b>Age</b>: 21</p>
+   <p><b>College</b>: Northwestern</p>
+   <p><b>Hometown</b>: Emerald Hills</p>
+   <p><b>City</b>: Evanston</p>
+   <div class='outreach-containers'>
+    <button-wrapper>
+    <button class='outreach-button'>Message</button>
+  </button-wrapper>
+   <!-- <br> -->
+   <button-wrapper>
+   <button class='outreach-button'>Add to Contact List</button>
+ </button-wrapper>
+  </div>
+   </div>
+
+</body>
+<script>window.onload = loadprofile(localStorage.getItem("name"));</script>
+</html>

@@ -30,7 +30,7 @@ body {
 #logo{
 	max-height: 40px;
 	padding-top:5px;
-  margin-right: 60px;
+  margin-right: 20px;
 }
 #controls{
 	max-height: 20px;
@@ -405,4 +405,12 @@ cursor:pointer;
   width: 100%;
   margin-bottom:10px;
   opacity: 1.0;
+}
+
+.top-link{
+	color:white;
+	padding:7px;
+	float:right;
+	margin-top:5px;
+	margin-right:4px;
 }

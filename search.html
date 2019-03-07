@@ -12,7 +12,7 @@
    <div id="screen">
      <div class="head-bar">
        <a href='./index.html'>
-        <img class="home-button" src="images/home-button.png" >
+        <span id="home-button" class="glyphicon glyphicon-home">
        </a>
        <a href='./index.html'>
         <img id="logo" src="images/Logo.png">
@@ -22,7 +22,7 @@
        <p class="sub-title"> Find Friends </p>
        <div class="search-bar">
           <a> Name: </a>
-          <input type="text" id="name-input" onkeyup="nameList()" placeholder="Search for names..">
+          <input type="text" id="name-input" oninput="populate()" placeholder="Search for names..">
         </div>
         <div class="filter-bar">
           <div class="filter-drop">
@@ -55,20 +55,10 @@
         </div>
 
         <ul id="name-list">
-          <li><a href="#">Adele</a></li>
-          <li><a href="#">Agnes</a></li>
-
-          <li><a href="#">Billy</a></li>
-          <li><a href="#">Bob</a></li>
-
-          <li><a href="#">Calvin</a></li>
-          <li><a href="#">Christina</a></li>
-          <li><a href="#">Cindy</a></li>
         </ul>
      </div>
      <div class="tail-bar">
-        <p class="submit"> Search </p>
-
-
+      <p class="submit"> Search </p>
      </div>
 </body>
+<script>populate()</script>

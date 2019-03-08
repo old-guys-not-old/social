@@ -72,65 +72,108 @@ day=element.id.split("-")[1];
 day="2019-03-"+day;
   // d="2019-03-" + day
   // var da= getQueryVariable("day");
- console.log(time+":00")
  document.getElementById("day-selection").value=day;
  document.getElementById("start-time").defaultValue=String(time)+":00"
  document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
 }
 
+
+function sub(){
+var title=document.getElementById('event-title').value;
+var notes = document.getElementById('event-details').value;
+var start = document.getElementById('start-time').value;
+var end = document.getElementById('end-time').value;
+var invite = document.getElementById('guests-input').value;
+var day = document.getElementById('day-selection').value;
+if (!sessionStorage.getItem('events')){
+  var events={"events":[{"title":title, "notes":notes,"start":start,"end":end,"invite":invite,"day":day}]
+              }
+  events=JSON.stringify(events)
+  sessionStorage.setItem('events', events);
+    }
+else{
+      z=sessionStorage.getItem('events');
+      temp=$.parseJSON(z);
+      var b={"title":title, "notes":notes,"start":start,"end":end,"invite":invite,"day":day};
+      temp.events.push(b);
+      var arr=temp.events
+      var uniquearray=[]
+      $.each(arr, function(i, el){
+    if($.inArray(el, uniquearray) === -1) uniquearray.push(el);
+        });
+        console.log(uniquearray)
+      events=JSON.stringify(temp);
+      sessionStorage.setItem('events', events);
+    }
+  //console.log($.parseJSON(sessionStorage.getItem('events')).events[0].title)
+
+  toggleForm()
+}
+
 function submitForm(){
-  if(getQueryVariable("title")){
-    var eventTitle = getQueryVariable("title");
+  var events=$.parseJSON(sessionStorage.getItem('events')).events
+  for(var p=0; p<events.length;p++){
+    var eventTitle =events[p].title;
     if (eventTitle.length>5){
       eventTitle=eventTitle[0]+eventTitle[1]+eventTitle[2]+eventTitle[3]+eventTitle[4]+".."
     }
-    var notes = getQueryVariable("notes");
-    var start = getQueryVariable("start");
-    var end = getQueryVariable("end");
-    var invite = getQueryVariable("invite");
-    var day = getQueryVariable("day");
+    var notes = events[p].notes;
+    var start = events[p].start;
+    var end = events[p].end;
+    var invite = events[p].invite;
+    var day = events[p].day;
     //console.log(eventTitle+" " +notes+" "+start+" "+end+" "+invite+ " "+ day);
-    day=day[8]+day[9]
-    starthour=start[0]+start[1];
-    endhour=end[0]+end[1];
-    diff=endhour-starthour
-    mid=Math.floor(diff/2);
-    string=starthour+"-"+day;
-    var i;
-  for (i = 0; i <= diff; i++) {
-    string=(parseInt(starthour)+i)+"-"+day;
-    document.getElementById(string).style.backgroundColor='#585858';
-    document.getElementById(string).style.color='white';
-    document.getElementById(string).onclick=eventDetails;
-    if(i==mid){
-    document.getElementById(string).style.fontSize="7px";
-    var eventTitle = eventTitle.split("+").join(" ")
-    document.getElementById(string).innerHTML=eventTitle;
-  }
-}
+      day=day[8]+day[9]
+      starthour=start[0]+start[1];
+      endhour=end[0]+end[1];
+      diff=endhour-starthour
+      mid=Math.floor(diff/2);
+      string=starthour+"-"+day;
+      var i;
+      for (i = 0; i <= diff; i++) {
+        string=(parseInt(starthour)+i)+"-"+day;
+        document.getElementById(string).style.backgroundColor='#585858';
+        document.getElementById(string).style.color='white';
+        document.getElementById(string).setAttribute("title",eventTitle)
+        document.getElementById(string).setAttribute("notes",notes)
+        document.getElementById(string).setAttribute("start",start)
+        document.getElementById(string).setAttribute("end",end)
+        document.getElementById(string).setAttribute("invite",invite)
+        document.getElementById(string).setAttribute("day",day)
+        //console.log(this)
+        document.getElementById(string).onclick = function() { eventDetails(this);};
+        if(i==mid){
+        document.getElementById(string).style.fontSize="7px";
+        var eventTitle = eventTitle.split("+").join(" ")
+        document.getElementById(string).innerHTML=eventTitle;
+      }
+    }
 }
 }
 
 
 
-function eventDetails(){
-  var str=getQueryVariable("title")
-  var notes = getQueryVariable("notes");
-  var start = getQueryVariable("start");
-  var end = getQueryVariable("end");
-  var invite = getQueryVariable("invite");
-  var day = getQueryVariable("day");
+function eventDetails(obj){
+  console.log(obj)
+  var str=obj.title
+  var notes=obj.getAttribute('notes')
+  var star=obj.getAttribute('start')
+  var end=obj.getAttribute('end')
+  var invite=obj.getAttribute('invite')
+  var day=obj.getAttribute('day')
+  day="2019-03-"+day;
+  if(notes){
   var notes = notes.split("+").join(" ");
+  }
+if(invite){
   var invite = invite.split("+").join(" ")
+}
   var title = str.split("+").join(" ")
-  start=(String(parseInt(start)%24)+":00")
-  end=(String(parseInt(end)%24)+":00")
-  console.log(start,end,day)
+  console.log(obj.getAttribute('day'))
   document.getElementById("event-title").value=title;
   document.getElementById("event-details").value=notes;
-  document.getElementById("start-time").value=start;
+  document.getElementById("start-time").value=star;
   document.getElementById("end-time").value=end;
-  document.getElementById("start-time").value=start;
   document.getElementById("guests-input").value=invite;
   document.getElementById("day-selection").value=day;
   document.getElementById("create-event").innerHTML="Edit Event"

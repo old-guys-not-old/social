@@ -55,7 +55,7 @@ function populateCal(){
         //g.onclick=changeForm(String(i),String(j+currSunday))
         g.addEventListener('click', function(){
           str=j+currSunday
-          changeForm(i,str);
+          changeForm(this);
         });
         g.onclick=toggleForm
         g.style.backgroundColor="#f2f2f2"
@@ -66,17 +66,16 @@ function populateCal(){
 }
 
 
-function changeForm(time,day){
-  //console.log("2019-02-" + day)
-  //console.log(String(parseInt(time)%24+1)+":00")
-  d="2019-03-" + day
-  var da= getQueryVariable("day");
-  //console.log(d)
-  //console.log(da)
-  //console.log(time+":00")
-  document.getElementById("day-selection").value=d;
-  document.getElementById("start-time").defaultValue=String(time)+":00"
-  document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
+function changeForm(element){
+time=element.id.split("-")[0];
+day=element.id.split("-")[1];
+day="2019-03-"+day;
+  // d="2019-03-" + day
+  // var da= getQueryVariable("day");
+ console.log(time+":00")
+ document.getElementById("day-selection").value=day;
+ document.getElementById("start-time").defaultValue=String(time)+":00"
+ document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
 }
 
 function submitForm(){
@@ -90,7 +89,7 @@ function submitForm(){
     var end = getQueryVariable("end");
     var invite = getQueryVariable("invite");
     var day = getQueryVariable("day");
-    console.log(eventTitle+" " +notes+" "+start+" "+end+" "+invite+ " "+ day);
+    //console.log(eventTitle+" " +notes+" "+start+" "+end+" "+invite+ " "+ day);
     day=day[8]+day[9]
     starthour=start[0]+start[1];
     endhour=end[0]+end[1];
@@ -126,6 +125,7 @@ function eventDetails(){
   var title = str.split("+").join(" ")
   start=(String(parseInt(start)%24)+":00")
   end=(String(parseInt(end)%24)+":00")
+  console.log(start,end,day)
   document.getElementById("event-title").value=title;
   document.getElementById("event-details").value=notes;
   document.getElementById("start-time").value=start;
@@ -143,11 +143,7 @@ function toggleForm(){
   document.getElementById("create-event").innerHTML="Create Event"
   document.getElementById("event-title").value="";
   document.getElementById("event-details").value="";
-  document.getElementById("start-time").value="";
-  document.getElementById("end-time").value="";
-  document.getElementById("start-time").value="";
   document.getElementById("guests-input").value="";
-  document.getElementById("day-selection").value="";
 if (document.getElementById("myForm").style.display=="block"){
   document.getElementById("myForm").style.display = "none";
   document.getElementById("form-screen").style.opacity=0;

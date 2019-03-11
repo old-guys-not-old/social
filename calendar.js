@@ -131,20 +131,22 @@ function submitForm(){
       var i;
       for (i = 0; i <= diff; i++) {
         string=(parseInt(starthour)+i)+"-"+day;
-        document.getElementById(string).style.backgroundColor='#585858';
-        document.getElementById(string).style.color='white';
-        document.getElementById(string).setAttribute("title",eventTitle)
-        document.getElementById(string).setAttribute("notes",notes)
-        document.getElementById(string).setAttribute("start",start)
-        document.getElementById(string).setAttribute("end",end)
-        document.getElementById(string).setAttribute("invite",invite)
-        document.getElementById(string).setAttribute("day",day)
-        //console.log(this)
-        document.getElementById(string).onclick = function() { eventDetails(this);};
-        if(i==mid){
-        document.getElementById(string).style.fontSize="7px";
-        var eventTitle = eventTitle.split("+").join(" ")
-        document.getElementById(string).innerHTML=eventTitle;
+        if (document.getElementById(string)){
+          document.getElementById(string).style.backgroundColor='#585858';
+          document.getElementById(string).style.color='white';
+          document.getElementById(string).setAttribute("title",eventTitle)
+          document.getElementById(string).setAttribute("notes",notes)
+          document.getElementById(string).setAttribute("start",start)
+          document.getElementById(string).setAttribute("end",end)
+          document.getElementById(string).setAttribute("invite",invite)
+          document.getElementById(string).setAttribute("day",day)
+          //console.log(this)
+          document.getElementById(string).onclick = function() { eventDetails(this);};
+          if(i==mid){
+          document.getElementById(string).style.fontSize="7px";
+          var eventTitle = eventTitle.split("+").join(" ")
+          document.getElementById(string).innerHTML=eventTitle;
+        }
       }
     }
 }

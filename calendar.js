@@ -106,7 +106,6 @@ else{
       sessionStorage.setItem('events', events);
     }
   //console.log($.parseJSON(sessionStorage.getItem('events')).events[0].title)
-
   toggleForm()
 }
 

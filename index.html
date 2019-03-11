@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </header>
 <body>
-<script>console.log(sessionStorage.getItem('myCat'));</script>
    <div id="screen">
    <div class="head-bar">
      <p class="greeting"> Welcome, Abizar </p>
@@ -39,8 +38,6 @@
           <p id="event-name" class="chat-title">6x6 Futsal</p>
           <p id="chat-cancel-button-top" class="cancel-button-top">X</p>
           <div id="chat-box">
-             <!-- put fake conversation in here -->
-             <!--<h5 id="sample-message">Ryan: Hey </h5> -->
           </div>
           <input id="message-input" type="text" placeholder="Enter your message here" name="chat">
           <input id="send-button" type="submit" value="Send" class="btn">
@@ -68,9 +65,6 @@
      </a>
 </div>
 </body>
-<!--<script>populate()</script>
-
-</script>-->
 <script>
   $("#chat-button").click(function() {
     if (document.getElementById("myForm").style.display=="block"){

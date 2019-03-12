@@ -56,12 +56,19 @@ else{
     var c = document.createElement('img')
     c.className='contact_controls'
     c.src='images/text.png'
-    var d = document.createElement('a')
+    var d = document.createElement('p')
     d.innerHTML=arr[i]
+    var f = document.createElement('a')
+    f.href="tel:+16508883761"
+    var g = document.createElement('a')
+    g.href="tel:+16508883761"
     var e = document.createElement("li")
-    d.appendChild(a)
-    d.appendChild(b)
-    d.appendChild(c)
+    f.appendChild(b)
+    g.appendChild(a)
+    e.appendChild(f)
+    e.appendChild(g)
+    //e.appendChild(b)
+    e.appendChild(c)
     e.appendChild(d)
 
     document.getElementById('contactUL').appendChild(e)

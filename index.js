@@ -12,16 +12,57 @@ function getQueryVariable(variable)
 
 function populate()
 {
-  var message = getQueryVariable("chat");
-	if(message){
-    var message = message.split("+").join(" ")
-		document.getElementById("chat-box").innerHTML='<h5 id="message">Abizar: '+ message+ '</h5>';
-	}
+  var events=$.parseJSON(sessionStorage.getItem('events')).events
+  if (events){
+    for(var p=0; p<events.length;p++){
+      var title =events[p].title;
+      var notes = events[p].notes;
+      var start = events[p].start;
+      var end = events[p].end;
+      var invite = events[p].invite;
+      var day = events[p].day;
+      day=day[8]+day[9]
+      starthour=start[0]+start[1];
+      endhour=end[0]+end[1];
+      console.log(title,notes,start,end,invite,day,starthour,endhour)
+      var g=document.createElement("div");
+      g.className='preview-chat-box';
+      var z=document.createElement("span")
+      z.className="glyphicon glyphicon-pencil";
+      var y=document.createElement("div");
+      y.id="edit-button"
+      y.className="edit-button"
+      var x = document.createElement("p")
+      x.id="preview-details"
+      x.className="event-name"
+      x.innerHTML=title+"<br>"+" "+"3/"+day+"/2019"+"<br>"+start+" "+end
+      var w=document.createElement("span")
+      w.className="glyphicon glyphicon-comment";
+      var t=document.createElement("div");
+      t.id="chat-button"
+      t.className="chat-button"
+      t.appendChild(w)
+      y.appendChild(z)
+
+      g.appendChild(x)
+      g.appendChild(y)
+      g.appendChild(t)
+      document.getElementById("recent-activities").appendChild(g)
+    }
+  }
 }
 
+//<div class='preview-chat-box'>
+//    <p id="preview-details" class="event-name"> 6x6 Futsal game</p>
+//    <div id="edit-button" class="edit-button">
+//      <span class="glyphicon glyphicon-pencil">
+//    </div>
+//    <div id="chat-button" class='chat-button'>
+//      <span id="edit-button"class="glyphicon glyphicon-comment">
+//    </div>
+//</div>
 
 function submitfunction(){
-  console.log("yeet")
   document.getElementById("myForm").style.display="block";
   var message = document.getElementById("message-input").value;
   document.getElementById("message-input").value="";

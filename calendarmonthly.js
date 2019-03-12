@@ -61,28 +61,54 @@ function changeForm(time,day){
   //console.log(String(parseInt(time)%24+1)+":00")
   d="2019-03-" + day
   var da= getQueryVariable("day");
-  //console.log(d)
-  //console.log(da)
-  //console.log(time+":00")
   document.getElementById("day-selection").value=d;
   document.getElementById("start-time").defaultValue=String(time)+":00"
   document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
 }
 
 function submitForm(){
-  if(getQueryVariable("title")){
-    var eventTitle = getQueryVariable("title");
-    var notes = getQueryVariable("notes");
-    var start = getQueryVariable("start");
-    var end = getQueryVariable("end");
-    var invite = getQueryVariable("invite");
-    var day = getQueryVariable("day");
-    console.log(eventTitle+" " +notes+" "+start+" "+end+" "+invite+ " "+ day);
+  var events=$.parseJSON(sessionStorage.getItem('events')).events
+  for(var p=0; p<events.length;p++){
+    var day = events[p].day;
     day=day[8]+day[9]
     document.getElementById(day).style.backgroundColor='#585858';
-    document.getElementById(day).style.color="white";
-    document.getElementById(day).onclick=eventDetails;
+    document.getElementById(day).style.color='white';
+    document.getElementById(day).setAttribute("day",day)
+    //document.getElementById(string).onclick = function() { eventDetails(this);};
+    }
 }
+
+function subFunction(){
+var title=document.getElementById('event-title').value;
+var notes = document.getElementById('event-details').value;
+var start = document.getElementById('start-time').value;
+var end = document.getElementById('end-time').value;
+var invite = document.getElementById('guests-input').value;
+var day = document.getElementById('day-selection').value;
+if (!sessionStorage.getItem('events')){
+  var events={"events":[{"title":title, "notes":notes,"start":start,"end":end,"invite":invite,"day":day}]
+              }
+  events=JSON.stringify(events)
+  sessionStorage.setItem('events', events);
+  console.log(sessionStorage.getItem('events'))
+    }
+else{
+      z=sessionStorage.getItem('events');
+      temp=$.parseJSON(z);
+      var b={"title":title, "notes":notes,"start":start,"end":end,"invite":invite,"day":day};
+      temp.events.push(b);
+      var arr=temp.events
+      var uniquearray=[]
+      $.each(arr, function(i, el){
+    if($.inArray(el, uniquearray) === -1) uniquearray.push(el);
+        });
+        console.log(uniquearray)
+      events=JSON.stringify(temp);
+      sessionStorage.setItem('events', events);
+    }
+  //console.log($.parseJSON(sessionStorage.getItem('events')).events[0].title)
+
+  toggleForm()
 }
 
 
@@ -156,4 +182,9 @@ if (document.getElementById("myForm").style.display=="block"){
 
 
   }
+}
+
+function huf(){
+  console.log("HEYY")
+  return false;
 }

@@ -22,7 +22,7 @@
    <div id="form-screen" onclick="toggleForm()">
      </div>
    <div class="form-popup" id="myForm">
-     <form class="form-container" onsubmit="submitForm()">
+     <form class="form-container" onsubmit="subFunction();return false;">
        <p id="create-event" class="form-title">Create Event</p>
        <p id="cancel-button-top" onclick="toggleForm()">X</p>
         <input id="event-title" type="text" placeholder="Event Title" name="title" required>
@@ -37,7 +37,7 @@
        <p id="cancel-button" onclick="toggleForm()">Cancel</p>
       </form>
    </div>
-<div><a href="calendar.html"><h5 style="color:#585858;" id="weekly-view" class="view">Weekly View</h5></a> <h5 style="color:#4e80ce;" id="monthly-view" class="view">Monthly View</h5></div>
+<div><a href="calendar.html"><h4 style="color:#585858;" id="weekly-view" class="view">Weekly View</h4></a> <h4 style="color:#4e80ce;" id="monthly-view" class="view">Monthly View</h4></div>
   <h4> March</h4>
    <div style="grid-template-columns: auto auto auto auto auto auto auto;"id="grid-container">
      <div class="grid-item-top">Su</div>

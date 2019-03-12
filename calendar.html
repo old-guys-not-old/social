@@ -22,7 +22,7 @@
    <div id="form-screen" onclick="toggleForm()">
      </div>
    <div class="form-popup" id="myForm">
-     <form class="form-container" onsubmit="submitForm()">
+     <form class="form-container" onsubmit="sub();">
        <p id="create-event" class="form-title">Create Event</p>
        <p id="cancel-button-top" onclick="toggleForm()">X</p>
         <input id="event-title" type="text" placeholder="Event Title" name="title" required>
@@ -37,7 +37,13 @@
        <p id="cancel-button" onclick="toggleForm()">Cancel</p>
       </form>
    </div>
-<div><h5 id="weekly-view" class="view">Weekly View</h5> <a href="calendarmonthly.html"><h5 id="monthly-view" class="view">Monthly View</h5></a></div>
+<div>
+  <h4 id="weekly-view" class="view">Weekly View</h4>
+  <a href="calendarmonthly.html">
+    <h4 id="monthly-view" class="view">Monthly View
+    </h4>
+  </a>
+</div>
    <div id="grid-container">
      <div class="grid-item"></div>
      <div class="grid-item-top">Su</div>

@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </header>
-
 <body>
    <div id="screen">
    <div class="head-bar">
@@ -25,6 +24,7 @@
    <br><br><br>
    <div class="mid-screen">
      <p class="sub-title"> Recent Activities </p>
+      <div id="recent-activities">
        <div class='preview-chat-box'>
            <p id="preview-details" class="event-name"> 6x6 Futsal game</p>
            <div id="edit-button" class="edit-button">
@@ -57,49 +57,12 @@
 
            </div>
        </div>
-       <!--<div id="beach-preview" class='preview-chat-box'>
-           <p id="preview-details" class="event-name">Concert at Long Beach</p>
-           <div id="edit-button" class="edit-button">
-             <span class="glyphicon glyphicon-pencil">
-           </div>
-           <div id="chat-button" class='chat-button'>
-             <span id="edit-button"class="glyphicon glyphicon-comment">
-           </div>
        </div>
-       <div id="mimosas-preview"class='preview-chat-box'>
-           <p id="preview-details" class="event-name">Mimosas with Frank</p>
-           <div id="edit-button" class="edit-button">
-             <span class="glyphicon glyphicon-pencil">
-           </div>
-           <div id="chat-button" class='chat-button'>
-             <span id="edit-button"class="glyphicon glyphicon-comment">
-           </div>
-       </div>
-       <div id="mimosas-preview"class='preview-chat-box'>
-           <p id="preview-details" class="event-name">Mimosas with Frank</p>
-           <div id="edit-button" class="edit-button">
-             <span class="glyphicon glyphicon-pencil">
-           </div>
-           <div id="chat-button" class='chat-button'>
-             <span id="edit-button"class="glyphicon glyphicon-comment">
-           </div>
-       </div>
-       <div id="mimosas-preview"class='preview-chat-box'>
-           <p id="preview-details" class="event-name">Mimosas with Frank</p>
-           <div id="edit-button" class="edit-button">
-             <span class="glyphicon glyphicon-pencil">
-           </div>
-           <div id="chat-button" class='chat-button'>
-             <span id="edit-button"class="glyphicon glyphicon-comment">
-           </div>
-       </div>-->
        <div class="form-popup" id="myForm">
         <form class="form-container" onsubmit="submitfunction();return false;">
           <p id="event-name" class="chat-title">6x6 Futsal</p>
           <p id="chat-cancel-button-top" class="cancel-button-top">X</p>
           <div id="chat-box">
-             <!-- put fake conversation in here -->
-             <!--<h5 id="sample-message">Ryan: Hey </h5> -->
           </div>
           <input id="message-input" type="text" placeholder="Enter your message here" name="chat">
           <input id="send-button" type="submit" value="Send" class="btn">
@@ -128,8 +91,6 @@
 </div>
 </body>
 <script>populate()</script>
-
-</script>
 <script>
   $("#chat-button").click(function() {
     if (document.getElementById("myForm").style.display=="block"){

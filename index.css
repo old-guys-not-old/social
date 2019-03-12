@@ -86,7 +86,7 @@ body {
     display: flex;
     width: 150px;
 		font-weight:bold;
-
+		margin-right: 160px;
 }
 #feed-edit {
     border-color: lightgrey;
@@ -95,25 +95,30 @@ body {
     margin-top: 5px;
     margin-left: 190px;
 }
-.event-info {
-    color: #585858;
-    font-size: 14;
-    padding: 5px;
-    text-align: left;
-    display: flex;
-    width: 150px;
 
+.event-descriptions1{
+	color: #585858;
+	font-size: 12;
+	padding: 1px;
+	width: 200px;
+
+	text-align: left;
+	max-height: 8px;
+	margin-top: 10px;
+	margin-left: 5px;
+	height: 20px;
 }
-.event-descriptions{
+.event-descriptions2{
 		color: #585858;
-		font-size: 12;
-		padding: 1px;
-		width: 300px;
-		float: left;
-		text-align: left;
-		max-height: 8px;
-		margin-top: 2px;
-		margin-left: 5px;
+    font-size: 12;
+    padding: 1px;
+    float: left;
+    text-align: left;
+    max-height: 8px;
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 20px;
+    display: inline-flex;
 }
 .tail-bar {
 	height: 55px;
@@ -124,6 +129,7 @@ body {
 	top: 515px;
 	left: 0px;
 	width: 375px;
+	font-size: 18px;
 }
 .tail-features{
 	width: 100%;
@@ -414,3 +420,27 @@ cursor:pointer;
 	margin-top:5px;
 	margin-right:4px;
 }
+.dropbtn {
+	color: #585858;
+	font-size: 12;
+	border: none;
+	display: inline-block;
+	margin-left: 4;
+}
+.namedrop {
+  position: relative;
+  display: inline-block;
+}
+.invited-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 80px;
+
+  z-index: 1;
+}
+.invited-content p {
+  color: black;
+  display: block;
+}
+.namedrop:hover .invited-content {display: block;}

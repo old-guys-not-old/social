@@ -228,7 +228,7 @@ body {
 
 	align-content: center;
 	position: fixed;
-	top: 500px;
+	top: 545px;
 	left: 0px;
 	width: 375px;
 }
@@ -240,12 +240,4 @@ body {
   padding: 5;
   margin-top: 10px;
   margin-right: 10px;
-}
-
-#home-button{
-	color:white;
-	float:left;
-	padding:8px;
-	margin-top:5px;
-	margin-left:10px;
 }

@@ -121,7 +121,7 @@ body {
 	color: #FFF;
 	align-content: center;
 	position: fixed;
-	top: 515px;
+	top: 544px;
 	left: 0px;
 	width: 375px;
 }
@@ -350,8 +350,7 @@ margin-bottom: 5px;
 	margin-left:45px;
 }
 #calendar{
-	display:inline;
-	margin-top:10px;
+	margin-top:15px;
 }
 
 #send-button{

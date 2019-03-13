@@ -61,6 +61,10 @@ body {
 	height: 20px;
 }
 
+.view-bar{
+	margin-top: 10;
+}
+
 /* BEGIN FORM CSS */
 
 {box-sizing: border-box;}

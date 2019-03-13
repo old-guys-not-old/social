@@ -58,6 +58,44 @@ body {
 	margin: 35px;
 }
 
+#age-info-row{
+}
+
+#age-edit{
+	display:inline-block;
+}
+
+#age-edit{
+	display:inline-block;
+}
+
+#college-info-row{
+}
+
+#hometown-info-row{
+}
+
+#city-info-row{
+}
+
+.field-info{
+	display: inline-block;
+}
+
+.field-value{
+	display: inline-block;
+}
+
+.edit-button {
+    display:inline-block;
+    margin-left: 10;
+	font-size: 10;
+}
+
+#edit-button:hover{
+	cursor: pointer;
+}
+
 .striped-border {
     border: 1px dashed #000;
     width: 50%;

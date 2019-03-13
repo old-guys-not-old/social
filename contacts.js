@@ -17,3 +17,47 @@ function searchFunction() {
     }
   }
 }
+function jsUcfirst(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+names=["Akshay Bhardwaj","Amy Yang","Andrew Kim","Can Divitoglu","Daniel Bang","Daniel Chou","David Ding",
+"Garrett Matsuda","Izuho Suzuki","Lenin Estrada","Michael Waldman","Natalie Ghidali","Nathan Timmerman",
+"Nicole Hessler","Rochelle Compendio","Ryan Rawitscher","Samanvitha Sundar","Victor Aung","Yue Wang"]
+var nam=[]
+  var nam=[]
+  b=document.getElementById("nameInput").value;
+  if(!b){
+    document.getElementById("contactUL").innerHTML="";
+  }
+  if(b){
+    document.getElementById("contactUL").innerHTML="";
+      b=jsUcfirst(b)
+      //for(var k=0;k<b.length;k++){
+      //  if (b[k]=" "){
+     //        var h =1;
+    //      first=b.slice(0,k);
+    //      last=jsUcfirst(b.slice(k+1));
+    //      b=first+last;
+    //    }
+    //   }
+      console.log(b)
+      for (var i=0; i<names.length;i++){
+          nam[i]=names[i].substring(0,b.length)
+          nam[i]=jsUcfirst(nam[i])
+          if(nam[i]==b){
+            //str=\"names[i]\";
+            var text = "\""+names[i]+"\"";
+            console.log(text)
+            document.getElementById("contactUL").innerHTML=document.getElementById("contactUL").innerHTML+"<li><a href='friendprofile.html' onClick='profileView("+ text + ")'>"+names[i]+"</a></li>";
+          }
+      }
+  }
+
+  function profileView(name){
+    localStorage.setItem("name",name);
+  }
+
+  function loadprofile(n){
+    document.getElementById("profile-name").innerHTML = n;
+  }

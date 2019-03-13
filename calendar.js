@@ -224,3 +224,14 @@ if (document.getElementById("myForm").style.display=="block"){
 
   }
 }
+function groupPic(){
+  var checkBox = document.getElementById("chat-input");
+  var upload = document.getElementById("group-pic");
+  var text = document.getElementById("image-text")
+  if (checkBox.checked == true){
+    text.style.display = "block";
+    upload.style.display = "block";
+  } else {
+    upload.style.display = "none";
+  }
+}

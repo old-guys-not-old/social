@@ -35,7 +35,22 @@ function populate()
       var x = document.createElement("p")
       x.id="preview-details"
       x.className="event-name"
-      x.innerHTML=title+"<br>"+" "+"3/"+day+"/2019"+"<br>"+start+" "+end
+      x.innerHTML=title+"<br>"
+      var loc = document.createElement("p")
+      loc.id="event-descriptions1"
+      loc.className="event-descriptions1"
+      loc.innerHTML="at "+notes+"<br>"
+      var time = document.createElement("p")
+      time.id="event-descriptions1"
+      time.className="event-descriptions1"
+      time.innerHTML="on "+"3/"+day+"/2019"+" at "+start+"<br>"
+      var ppl = document.createElement("p")
+      ppl.id="event-descriptions2"
+      ppl.className="event-descriptions2"
+      if(invite.length!=0){
+        ppl.innerHTML="with "+invite+"<br>"
+      }
+
       var w=document.createElement("span")
       w.className="glyphicon glyphicon-comment";
       var t=document.createElement("div");
@@ -47,6 +62,10 @@ function populate()
       g.appendChild(x)
       g.appendChild(y)
       g.appendChild(t)
+      g.appendChild(loc)
+      g.appendChild(time)
+      g.appendChild(ppl)
+
       document.getElementById("recent-activities").appendChild(g)
     }
   }

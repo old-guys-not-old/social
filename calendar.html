@@ -26,13 +26,16 @@
        <p id="create-event" class="form-title">Create Event</p>
        <p id="cancel-button-top" onclick="toggleForm()">X</p>
         <input id="event-title" type="text" placeholder="Event Title" name="title" required>
-        <input id="event-details" type="text" placeholder="Event Details" name="notes">
+        <input id="event-details" type="text" placeholder="Location" name="notes">
         <p id="time-selection"> Select a Day</p>
         <input id="day-selection" type="date" name="day" value="2019-02-25" min="2018-01-01" max="2020-12-31">
         <p id="time-selection"> Select a Time</p><br>
         <input id="start-time" class="time-selection" type="time"  name="start" required>
         <input id="end-time" class="time-selection" type="time" name="end" required>
         <input id="guests-input" type="text" placeholder="Invite users" name="invite">
+        <p id="time-selection"> Create a group chat</p><input id="chat-input" type="checkbox" onclick="groupPic()" name="group">
+        <p id="image-text" style="display:none"> Choose a group image ▼</p>
+        <input id="group-pic" type="file" name="grouppic" style="display:none">
        <input id="create-event-button-popup" type="submit" class="btn"></input>
        <p id="cancel-button" onclick="toggleForm()">Cancel</p>
       </form>

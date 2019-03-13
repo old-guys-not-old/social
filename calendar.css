@@ -104,7 +104,7 @@ body {
 /* Add styles to the form container */
 .form-container {
   width: 250px;
-  height: 380px;
+  height: 450px;
   padding: 10px;
 	margin:0px;
   background-color: white;
@@ -125,12 +125,11 @@ body {
 #time-selection{
 	margin-bottom:0;
 	float:left;
-	display:block;
-	margin-right:30px;
+	display:inline-block;
+
 }
 #day-selection{
 	margin-bottom:5px;
-	float:left;
 	display:block;
 }
 
@@ -219,7 +218,14 @@ float:left;
 	margin-top:15px;
 	margin-bottom:15px;
 }
-
+#image-text{
+	font-size: 10px;
+	float: left;
+}
+#chat-input{
+	display: inline-block;
+	width: 50px;
+}
 #cancel-button{
 font-size: 10px;
 color:grey;

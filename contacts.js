@@ -33,7 +33,7 @@ function addContacts(){
       var c = document.createElement('img')
       c.className='contact_controls'
       c.src='images/text.png'
-      var d = document.createElement('a')
+      var d = document.createElement('p')
       d.innerHTML=brr[i]
       var e = document.createElement("li")
       d.appendChild(a)

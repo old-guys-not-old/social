@@ -193,6 +193,7 @@ float:left;
 	position: absolute;
 	top: 560;
 	left: 35px;
+	position: fixed;
 }
 .current-week{
 	font-size: 10px;

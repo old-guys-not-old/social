@@ -45,10 +45,10 @@ function populateCal(){
         }
         g.className="grid-item";
         g.style.height="50px"
-        g.style.color="grey"
+        g.style.color="white"
         if(i%2==0){
-          console.log(i)
           g.style.width='60px';
+          g.style.backgroundColor="grey"
           if((z+8)%13==0){
             g.innerHTML=1
             z++

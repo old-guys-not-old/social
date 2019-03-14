@@ -28,11 +28,11 @@
   </button-wrapper>
    <!-- <br> -->
    <button-wrapper>
-   <button class='outreach-button'>Add to Contact List</button>
+   <button id="add-button" class='outreach-button' onclick="add()">Add to Contact List</button>
  </button-wrapper>
   </div>
    </div>
-
+<script>console.log(sessionStorage.getItem('friends'))</script>
 </body>
 <script>window.onload = loadprofile(localStorage.getItem("name"));</script>
 </html>

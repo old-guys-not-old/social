@@ -17,47 +17,62 @@ function searchFunction() {
     }
   }
 }
-function jsUcfirst(string)
-{
-    return string.charAt(0).toUpperCase() + string.slice(1);
+
+
+function addContacts(){
+  var arr=sessionStorage.getItem('friends')
+  if(!arr){
+    var brr=['Ryan Rawitscher','Garrett Matsuda','Can Divitoglu']
+    for(var i=0; i<brr.length;i++){
+      var a = document.createElement('img')
+      a.className='contact_controls'
+      a.src='images/videocall.png'
+      var b = document.createElement('img')
+      b.className='contact_controls'
+      b.src='images/call.png'
+      var c = document.createElement('img')
+      c.className='contact_controls'
+      c.src='images/text.png'
+      var d = document.createElement('p')
+      d.innerHTML=brr[i]
+      var e = document.createElement("li")
+      d.appendChild(a)
+      d.appendChild(b)
+      d.appendChild(c)
+      e.appendChild(d)
+
+      document.getElementById('contactUL').appendChild(e)
+  }
 }
-names=["Akshay Bhardwaj","Amy Yang","Andrew Kim","Can Divitoglu","Daniel Bang","Daniel Chou","David Ding",
-"Garrett Matsuda","Izuho Suzuki","Lenin Estrada","Michael Waldman","Natalie Ghidali","Nathan Timmerman",
-"Nicole Hessler","Rochelle Compendio","Ryan Rawitscher","Samanvitha Sundar","Victor Aung","Yue Wang"]
-var nam=[]
-  var nam=[]
-  b=document.getElementById("nameInput").value;
-  if(!b){
-    document.getElementById("contactUL").innerHTML="";
-  }
-  if(b){
-    document.getElementById("contactUL").innerHTML="";
-      b=jsUcfirst(b)
-      //for(var k=0;k<b.length;k++){
-      //  if (b[k]=" "){
-     //        var h =1;
-    //      first=b.slice(0,k);
-    //      last=jsUcfirst(b.slice(k+1));
-    //      b=first+last;
-    //    }
-    //   }
-      console.log(b)
-      for (var i=0; i<names.length;i++){
-          nam[i]=names[i].substring(0,b.length)
-          nam[i]=jsUcfirst(nam[i])
-          if(nam[i]==b){
-            //str=\"names[i]\";
-            var text = "\""+names[i]+"\"";
-            console.log(text)
-            document.getElementById("contactUL").innerHTML=document.getElementById("contactUL").innerHTML+"<li><a href='friendprofile.html' onClick='profileView("+ text + ")'>"+names[i]+"</a></li>";
-          }
-      }
-  }
+else{
+  arr=arr.split(",")
+  for(var i=0; i<arr.length;i++){
+    var a = document.createElement('img')
+    a.className='contact_controls'
+    a.src='images/videocall.png'
+    var b = document.createElement('img')
+    b.className='contact_controls'
+    b.src='images/call.png'
+    var c = document.createElement('img')
+    c.className='contact_controls'
+    c.src='images/text.png'
+    var d = document.createElement('p')
+    d.innerHTML=arr[i]
+    var f = document.createElement('a')
+    f.href="tel:+16508883761"
+    var g = document.createElement('a')
+    g.href="tel:+16508883761"
+    var e = document.createElement("li")
+    f.appendChild(b)
+    g.appendChild(a)
+    e.appendChild(f)
+    e.appendChild(g)
+    //e.appendChild(b)
+    e.appendChild(c)
+    e.appendChild(d)
 
-  function profileView(name){
-    localStorage.setItem("name",name);
-  }
-
-  function loadprofile(n){
-    document.getElementById("profile-name").innerHTML = n;
-  }
+    document.getElementById('contactUL').appendChild(e)
+}
+  //<li><a href="#">Akshay Bhardwaj <img class="contact_controls" src="images/videocall.png"><img class="contact_controls" src="images/call.png"> <img class="contact_controls" src="images/text.png"></a></li>
+}
+}

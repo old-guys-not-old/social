@@ -128,7 +128,7 @@ body {
 	color: #FFF;
 	align-content: center;
 	position: fixed;
-	top: 544px;
+	top: 500px;
 	left: 0px;
 	width: 375px;
 	font-size: 18px;
@@ -433,5 +433,9 @@ cursor:pointer;
 .invited-content p {
   color: black;
   display: block;
+}
+
+#recent-activities{
+	margin-bottom: 300px;
 }
 .namedrop:hover .invited-content {display: block;}

@@ -16,9 +16,11 @@
    <h2 id='profile-name'>Abizar</h2>
    <img src="./images/abizar.jpg" id='profile-pic'alt="Avatar">
    <hr class='striped-border'>
+
+   <div class='info-container'>
     <div id='age-info-row'>
       <p class="field-info"><b>Age: </b> </p>
-      <div contenteditable="true" class="field-value">21</div>
+      <div onkeypress="return (this.innerText.length <= 20)" contenteditable="true" class="field-value">21</div>
       <div id="edit-button" class="edit-button">
         <span class="glyphicon glyphicon-pencil">
       </div>
@@ -26,7 +28,7 @@
 
     <div id='college-info-row'>
       <p class="field-info"><b>College: </b></p>
-      <div contenteditable="true" class="field-value">Northwestern</div>
+      <div onkeypress="return (this.innerText.length <= 20)" contenteditable="true" class="field-value">Northwestern</div>
       <div id="edit-button" class="edit-button">
         <span class="glyphicon glyphicon-pencil">
       </div>
@@ -34,7 +36,7 @@
 
     <div id='hometown-info-row'>
      <p class="field-info"><b>Hometown: </b></p>
-     <div contenteditable="true" class="field-value">Mumbai</div>
+     <div onkeypress="return (this.innerText.length <= 20)" contenteditable="true" class="field-value">Mumbai</div>
      <div id="edit-button" class="edit-button">
           <span class="glyphicon glyphicon-pencil">
       </div>
@@ -42,11 +44,12 @@
 
     <div id='city-info-row'>
       <p class="field-info"><b>City: </b></p>
-      <div contenteditable="true" class="field-value">Evanston</div>
+      <div onkeypress="return (this.innerText.length <= 20)" contenteditable="true" class="field-value">Evanston</div>
       <div id="edit-button" class="edit-button">
         <span class="glyphicon glyphicon-pencil">
       </div>
     </div>
+  </div>
 
    <div class='outreach-containers'>
     <button-wrapper>

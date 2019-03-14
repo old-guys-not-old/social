@@ -58,6 +58,12 @@ body {
 	margin: 35px;
 }
 
+.info-container{
+	margin-left: 110;
+    /*width: 170;*/
+    text-align: left;
+}
+
 #age-info-row{
 }
 
@@ -84,6 +90,7 @@ body {
 
 .field-value{
 	display: inline-block;
+	text-decoration: underline;
 }
 
 .edit-button {

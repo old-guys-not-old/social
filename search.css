@@ -19,17 +19,10 @@ body {
 	color: #FFF;
 	text-shadow: 1px 1px 0 #000;
 }
-.home-button {
+#home-button {
 	float: left;
-	padding:5px;
-	margin-top: 9px;
-	margin-left: 9px;
-	border-radius: 4px;
-	width: 26px;
-	height: 26px;
-	background-color: white;
-	border-color: lightgrey;
-	color:#585858;
+padding: 15px;
+color: white;
 }
 #logo{
 	max-height: 40px;

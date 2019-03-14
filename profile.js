@@ -39,3 +39,13 @@ else{
 document.getElementById("add-button").style.backgroundColor="green"
 document.getElementById("add-button").innerHTML="Added"
 }
+
+function added(){
+var friends=sessionStorage.getItem("friends")
+console.log(document.getElementById("profile-name").innerHTML)
+console.log(friends.includes(document.getElementById("profile-name").innerHTML))
+if (friends.includes(document.getElementById("profile-name").innerHTML)){
+  document.getElementById("add-button").style.backgroundColor="green"
+  document.getElementById("add-button").innerHTML="Already added"
+}
+}

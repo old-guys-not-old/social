@@ -30,7 +30,7 @@
               <i class="fa fa-caret-down"></i>
             </p>
             <div class="filter-content" id="myDropdown">
-              <p id="filter-cancel-button-top" class="cancel-button-top">X</p>
+              <p id="filter-cancel-button-top" class="cancel-button-top" onclick="myFunction()">X</p>
               <div class="filter-element">
                 <p id="age-select"> Age: </p>
                 <input id="age-in1" type="text" ><p class="fordash"> - </p>
@@ -49,7 +49,7 @@
                 <input id="city-in" type="text" >
               </div>
               <div class="filter-element">
-                <button id="filter-sub" onclick="filteradd()"> Apply </button>
+                <button id="filter-sub" onclick="filteradd();myFunction();"> Apply </button>
               </div>
             </div>
           </div>

@@ -36,25 +36,35 @@ function getQueryVariable(variable)
 
 function populateCal(){
   k=0
-  for (var i = 0; i < 36; i++){
-      var j = document.createElement("a");
-      j.href="daily.html"
+  var z=1
+  for (var i = 0; i < 32; i++){
         var g=document.createElement("div");
-        g.id=String(i-4);
+        g.id=i
         if(g.id.length<=1){
           g.id="0"+g.id;
         }
         g.className="grid-item";
-        //g.onclick=changeForm(String(i),String(j+currSunday))
-        g.onclick="javascript:location.href='index.html'"
         g.style.height="50px"
-        g.style.borer="solid 5px"
-        if (i>4 && i<36){
-          g.style.backgroundColor="#f2f2f2"
-          g.innerHTML=String(i-4)
+        g.style.color="white"
+        if(i%2==0){
+          g.style.width='60px';
+          g.style.backgroundColor="grey"
+          if((z+8)%13==0){
+            g.innerHTML=1
+            z++
+          }
+          else{
+            g.innerHTML=(z+8)%13
+            g.style.textAlign="center";
+          }
+          z++
         }
-        j.appendChild(g)
-        document.getElementById("grid-container").appendChild(j);
+        g.style.borer="solid 5px"
+      //if (i>4 && i<36){
+      //    g.style.backgroundColor="#f2f2f2"
+      //    g.innerHTML=String(i-4)
+      //  }
+        document.getElementById("grid-container").appendChild(g);
     }
 }
 

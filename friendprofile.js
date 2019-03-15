@@ -9,3 +9,10 @@ function getQueryVariable(variable)
           }
    }
 }
+
+
+function populate(){
+  friendName=sessionStorage.getItem('friend')
+  console.log(friendName)
+  document.getElementById('profile-name').innerHTML=friendName
+}

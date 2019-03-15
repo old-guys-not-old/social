@@ -38,7 +38,7 @@ function populateCal(){
   k=0
   for (var i = 0; i < 36; i++){
       var j = document.createElement("a");
-      j.href="daily.html"
+      j.href="jointdaily.html"
       j.onclick=changeday(this)
         var g=document.createElement("div");
         g.id=String(i-4);
@@ -195,7 +195,9 @@ if (document.getElementById("myForm").style.display=="block"){
   }
 }
 
-function huf(){
-  console.log("HEYY")
-  return false;
+function populate(){
+  friendName=sessionStorage.getItem('friend')
+  console.log(friendName)
+  document.getElementById('profile-name').innerHTML=friendName
+  document.getElementById('profile-name').style.color="#8b0000"
 }

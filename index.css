@@ -408,7 +408,7 @@ cursor:pointer;
 	color:white;
 	padding:7px;
 	float:right;
-	margin-top:5px;
+	margin-top:10px;
 	margin-right:4px;
 }
 .dropbtn {
@@ -437,5 +437,6 @@ cursor:pointer;
 
 #recent-activities{
 	margin-bottom: 300px;
+	background-color: #f2f2f2;
 }
 .namedrop:hover .invited-content {display: block;}

@@ -28,6 +28,7 @@ function nameList() {
   }
 }
 
+
 function jsUcfirst(string)
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -76,4 +77,8 @@ function profileView(name){
 
 function loadprofile(n){
   document.getElementById("profile-name").innerHTML = n;
+}
+function filteradd(){
+  document.getElementById("dropbtn").style.backgroundColor="green"
+  document.getElementById("dropbtn").innerHTML="Filters Added"
 }

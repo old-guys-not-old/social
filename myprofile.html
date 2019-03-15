@@ -9,7 +9,7 @@
    <div id="screen">
    <div class="head-bar">
      <a href='./index.html'>
-      <img class="home-button" src="images/home-button.png" >
+      <span id="home-button" class="glyphicon glyphicon-home">
      </a>
     <a href='./index.html'><img id="logo" src="images/Logo.png"></a>
    </div>
@@ -57,9 +57,12 @@
       <button class='outreach-button'>My Calendar</button>
     </form>
   </button-wrapper>
+  <button-wrapper>
+    <form action="./contacts.html">
+    <button class='outreach-button'>My Contacts</button>
+  </form>
+</button-wrapper>
   </div>
    </div>
-<script>console.log(sessionStorage.getItem('friends'))</script>
 </body>
-<script>window.onload = loadprofile(localStorage.getItem("name"));</script>
 </html>

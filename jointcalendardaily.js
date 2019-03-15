@@ -10,6 +10,7 @@ var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth() + 1; //January is 0!
 var yyyy = today.getFullYear();
+var currday=sessionStorage.getItem('day')
 
 if (dd < 10) {
   dd = '0' + dd;
@@ -35,36 +36,71 @@ function getQueryVariable(variable)
 }
 
 function populateCal(){
+  document.getElementById('currDay').innerHTML='March ' + currday
+  document.getElementById('currentday').innerHTML='March ' + currday
   k=0
-  for (var i = 0; i < 36; i++){
-      var j = document.createElement("a");
-      j.href="daily.html"
-      j.onclick=changeday(this)
+  var pp=3
+  var l=2
+  var z=1
+  for (var i = 0; i < 51; i++){
         var g=document.createElement("div");
-        g.id=String(i-4);
+        g.id=i
         if(g.id.length<=1){
           g.id="0"+g.id;
         }
         g.className="grid-item";
-        //g.onclick=changeForm(String(i),String(j+currSunday))
-        g.addEventListener('click', function(){
-    changeday(this);
-        });
         g.style.height="50px"
-        g.style.borer="solid 5px"
-        if (i>4 && i<36){
-          g.style.backgroundColor="#f2f2f2"
-          g.innerHTML=String(i-4)
+        g.style.color="black"
+        if(i==0){}
+        else if (i==1){
+          g.innerHTML='Abizar'
         }
-        j.appendChild(g)
-        document.getElementById("grid-container").appendChild(j);
+        else if (i==2){
+          g.innerHTML=sessionStorage.getItem('friend')
+        }
+        else if(i%3==0){
+          g.id='00'
+          g.style.width='60px';
+          g.style.backgroundColor="lightgrey"
+          if((z+8)%13==0){
+            g.innerHTML=1
+            z++
+          }
+          else{
+            g.innerHTML=(z+8)%13
+            g.style.textAlign="center";
+          }
+          z++
+        }
+        else{
+          if(i==4){
+            g.id='09'
+          }
+          else if(i<=14&&i>6){
+            g.id=i+pp
+            pp=pp-1
+          }
+          else{
+            g.id=i-l
+            l++
+          }
+        }
+        if(i%3==2){
+          g.id='friend'+i
+          g.className='friend'
+        }
+        else if(i%3==1){
+          g.className='me'
+        }
+        g.style.borer="solid 5px"
+      //if (i>4 && i<36){
+      //    g.style.backgroundColor="#f2f2f2"
+      //    g.innerHTML=String(i-4)
+      //  }
+        document.getElementById("grid-container").appendChild(g);
     }
 }
 
-
-function changeday(item){
-  sessionStorage.setItem('day',item.id)
-}
 
 function changeForm(time,day){
   //console.log("2019-02-" + day)
@@ -76,18 +112,57 @@ function changeForm(time,day){
   document.getElementById("end-time").defaultValue=String(time%24+1)+":00"
 }
 
+
+
 function submitForm(){
   var events=$.parseJSON(sessionStorage.getItem('events')).events
   for(var p=0; p<events.length;p++){
     var day = events[p].day;
     day=day[8]+day[9]
-    document.getElementById(day).style.backgroundColor='#585858';
-    document.getElementById(day).innerHTML=document.getElementById(day).innerHTML+'<br><span style="color:white"backgroundColor="white" class="	glyphicon glyphicon-star"></span>'
-    document.getElementById(day).style.color='white';
-    document.getElementById(day).setAttribute("day",day)
-    //document.getElementById(string).onclick = function() { eventDetails(this);};
+    console.log(day)
+    if(day==currday){
+    var eventTitle =events[p].title;
+    if (eventTitle.length>5){
+      eventTitle=eventTitle[0]+eventTitle[1]+eventTitle[2]+eventTitle[3]+eventTitle[4]+".."
     }
+    var notes = events[p].notes;
+    var start = events[p].start;
+    var end = events[p].end;
+    var invite = events[p].invite;
+    var day = events[p].day;
+    //console.log(eventTitle+" " +notes+" "+start+" "+end+" "+invite+ " "+ day);
+      day=day[8]+day[9]
+      starthour=start[0]+start[1];
+      endhour=end[0]+end[1];
+      diff=endhour-starthour
+      mid=Math.floor(diff/2);
+      string=starthour+"-"+day;
+      for (var i = 0; i <= diff; i++) {
+        string=(parseInt(starthour)+i)
+        if (document.getElementById(string)){
+          document.getElementById(string).style.backgroundColor='#585858';
+          document.getElementById(string).style.color='white';
+          document.getElementById(string).setAttribute("title",eventTitle)
+          document.getElementById(string).setAttribute("notes",notes)
+          document.getElementById(string).setAttribute("start",start)
+          document.getElementById(string).setAttribute("end",end)
+          document.getElementById(string).setAttribute("invite",invite)
+          document.getElementById(string).setAttribute("day",day)
+          //console.log(this)
+          document.getElementById(string).onclick = function() { eventDetails(this);};
+          if(i==mid){
+          document.getElementById(string).style.fontSize="20px";
+          var eventTitle = eventTitle.split("+").join(" ")
+          document.getElementById(string).innerHTML=eventTitle;
+                  }
+                }
+              }
+            }
+  }
 }
+
+
+
 
 function subFunction(){
 var title=document.getElementById('event-title').value;
@@ -124,23 +199,27 @@ else{
 
 
 
-function eventDetails(){
-  var str=getQueryVariable("title")
-  var notes = getQueryVariable("notes");
-  var start = getQueryVariable("start");
-  var end = getQueryVariable("end");
-  var invite = getQueryVariable("invite");
-  var day = getQueryVariable("day");
+function eventDetails(obj){
+  console.log(obj)
+  var str=obj.title
+  var notes=obj.getAttribute('notes')
+  var star=obj.getAttribute('start')
+  var end=obj.getAttribute('end')
+  var invite=obj.getAttribute('invite')
+  var day=obj.getAttribute('day')
+  day="2019-03-"+day;
+  if(notes){
   var notes = notes.split("+").join(" ");
+  }
+if(invite){
   var invite = invite.split("+").join(" ")
+}
   var title = str.split("+").join(" ")
-  start=(String(parseInt(start)%24)+":00")
-  end=(String(parseInt(end)%24)+":00")
+  console.log(obj.getAttribute('day'))
   document.getElementById("event-title").value=title;
   document.getElementById("event-details").value=notes;
-  document.getElementById("start-time").value=start;
+  document.getElementById("start-time").value=star;
   document.getElementById("end-time").value=end;
-  document.getElementById("start-time").value=start;
   document.getElementById("guests-input").value=invite;
   document.getElementById("day-selection").value=day;
   document.getElementById("create-event").innerHTML="Edit Event"
@@ -156,8 +235,8 @@ function toggleForm(){
   document.getElementById("start-time").value="";
   document.getElementById("end-time").value="";
   document.getElementById("start-time").value="";
-  document.getElementById("guests-input").value="";
-  document.getElementById("day-selection").value="";
+  document.getElementById("guests-input").value=sessionStorage.getItem('friend');
+  document.getElementById("day-selection").value='2019-03-'+sessionStorage.getItem('day');
 if (document.getElementById("myForm").style.display=="block"){
   document.getElementById("myForm").style.display = "none";
   document.getElementById("form-screen").style.opacity=0;
@@ -175,7 +254,13 @@ if (document.getElementById("myForm").style.display=="block"){
   }
 }
 
-
+function sample(){
+  var some=['friend5','friend8','friend11','friend32','friend35']
+  for(var t=0;t<some.length;t++){
+    document.getElementById(some[t]).style.backgroundColor='#585858';
+    document.getElementById(some[t]).style.color='white';
+  }
+}
 
 
 function toggleForm2(){

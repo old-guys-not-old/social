@@ -18,6 +18,12 @@ function searchFunction() {
   }
 }
 
+function setProf(name){
+  console.log(name.innerHTML)
+  sessionStorage.setItem('friend',name.innerHTML)
+  console.log(sessionStorage.getItem('friend'))
+}
+
 
 function addContacts(){
   var arr=sessionStorage.getItem('friends')
@@ -57,7 +63,15 @@ else{
     c.className='contact_controls'
     c.src='images/text.png'
     var d = document.createElement('p')
-    d.innerHTML=arr[i]
+    var tt = document.createElement('a')
+    var name=arr[i]
+    tt.innerHTML=name
+    tt.addEventListener('click', function(){
+    setProf(this);
+});
+
+    tt.href='friendprofile.html'
+    d.appendChild(tt)
     var f = document.createElement('a')
     f.href="tel:+16508883761"
     var g = document.createElement('a')

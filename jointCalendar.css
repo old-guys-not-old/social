@@ -300,7 +300,6 @@ font-weight:bold;
 }
 
 #weekly-view{
-	margin-right:50px;
 }
 
 #monthly-view{
@@ -316,12 +315,7 @@ font-weight:bold;
 	margin-left:10px;
 }
 
-.friend{
-	margin-left:3px;
-	border-bottom:solid .5px black;
-}
+#profile-name{
+	display:inline;
 
-.me{
-	margin-left:5px;
-	border-bottom:solid .5px black;
 }

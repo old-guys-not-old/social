@@ -77,7 +77,7 @@ body {
   overflow: hidden;
 }
 
-.filter-drop .dropbtn {
+.filter-drop #dropbtn {
     cursor: pointer;
     font-size: 14px;
     border: none;
@@ -91,7 +91,7 @@ body {
     text-align: left;
 }
 
-.filter-bar a:hover, .filter-drop:hover .dropbtn, .dropbtn:focus {
+.filter-bar a:hover, .filter-drop:hover #dropbtn, #dropbtn:focus {
   background-color: #E3E3E3;
 }
 
@@ -102,6 +102,7 @@ body {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+	height: 220;
 }
 
 
@@ -121,6 +122,7 @@ body {
 }
 .filter-element{
   height: 40px;
+	display: flex;
 }
 #age-select{
     color: black;
@@ -130,7 +132,16 @@ body {
     text-align: left;
     float: left;
 }
-#age-in{
+#age-in1{
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	width: 40;
+	margin-top: 10px;
+	margin-right: 3;
+	margin-left: 31;
+}
+#age-in2{
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -145,15 +156,15 @@ body {
   display: block;
   text-align: left;
   float: left;
-  margin-left: -60;
+
 }
 #school-in{
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  width: 100;
-  margin-top: 10px;
-  margin-right: 10px;
+		font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 100;
+    margin-top: 10px;
+    margin-left: 13;
 }
 #prof-select{
   color: black;
@@ -162,15 +173,15 @@ body {
   display: block;
   text-align: left;
   float: left;
-  margin-left: -80;
+
 }
 #prof-in{
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  width: 100;
-  margin-top: 10px;
-  margin-left: -30px;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	width: 100;
+	margin-top: 10px;
+	margin-left: -10;
 }
 #city-select{
   color: black;
@@ -179,21 +190,21 @@ body {
   display: block;
   text-align: left;
   float: left;
-  margin-left: -100px;
+
 }
 #city-in{
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  width: 100;
-  margin-top: 10px;
-  margin-left: -30px;
+		font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 100;
+    margin-top: 10px;
+    margin-left: 32px;
 }
 
 #filter-sub{
   background-color: #D9E7FB;
   width: 80px;
-  height: 20px;
+  height: 30px;
   margin-left: 110;
   margin-top: 10;
 }
@@ -240,4 +251,27 @@ body {
   padding: 5;
   margin-top: 10px;
   margin-right: 10px;
+}
+#home-button{
+	color:white;
+	float:left;
+	padding:8px;
+	margin-top:5px;
+	margin-left:10px;
+}
+.fordash{
+	width: 4px;
+	margin-top: 15;
+	margin-right: 8;
+	margin-left: 5;
+}
+.cancel-button-top{
+	font-size: 13px;
+	color:black;
+	cursor:pointer;
+	width:30px;
+	float:right;
+	display:inline;
+	margin-top: 2px;
+	font-weight:bold;
 }

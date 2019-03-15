@@ -125,3 +125,10 @@ body {
 	left: 0px;
 	width: 375px;
 }
+#home-button{
+	color:white;
+	float:left;
+	padding:8px;
+	margin-top:5px;
+	margin-left:10px;
+}

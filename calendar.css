@@ -192,8 +192,10 @@ float:left;
 	color:#585858;
 	position: absolute;
 	top: 560;
-	left: 35px;
+	left: 55px;
 	position: fixed;
+	background-color: rgba(88, 88, 88, 0.6);
+	border-radius: 10px;
 }
 .current-week{
 	font-size: 10px;

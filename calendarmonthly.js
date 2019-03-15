@@ -39,6 +39,7 @@ function populateCal(){
   for (var i = 0; i < 36; i++){
       var j = document.createElement("a");
       j.href="daily.html"
+      j.onclick=changeday(this)
         var g=document.createElement("div");
         g.id=String(i-4);
         if(g.id.length<=1){
@@ -46,7 +47,9 @@ function populateCal(){
         }
         g.className="grid-item";
         //g.onclick=changeForm(String(i),String(j+currSunday))
-        g.onclick="javascript:location.href='index.html'"
+        g.addEventListener('click', function(){
+    changeday(this);
+        });
         g.style.height="50px"
         g.style.borer="solid 5px"
         if (i>4 && i<36){
@@ -58,6 +61,10 @@ function populateCal(){
     }
 }
 
+
+function changeday(item){
+  sessionStorage.setItem('day',item.id)
+}
 
 function changeForm(time,day){
   //console.log("2019-02-" + day)

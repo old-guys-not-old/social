@@ -10,7 +10,7 @@
    <div id="screen">
    <div class="head-bar">
      <a href='./index.html'>
-      <img class="home-button" src="images/home-button.png" >
+      <span id="home-button" class="glyphicon glyphicon-home">
      </a>
     <a href='./index.html'><img id="logo" src="images/Logo.png"></a>
          <button class="create-event-button" onclick="toggleForm()">
@@ -41,20 +41,19 @@
   <h4 id="currDay"> currDay</h4>
    <div style="grid-template-columns: 60px auto;"id="grid-container">
    </div>
-   <script>populateCal()</script>
-   <script>submitForm()</script>
-
     <div class="bottom-control">
        <button class="change-week-button" onclick="backWeek()">
           <div>Prev Day</div>
           </button>
        <div class="current-week" >
-            <p id="CurrDay">CurrDay<p>
+            <p id="currentday">CurrDay<p>
             </div>
        <button class="change-week-button" onclick="forwardWeek()">
           <div>Next Day</div>
           </button>
        </div>
 </div>
+<script>populateCal()</script>
+<script>submitForm()</script>
 </body>
 </html>
